@@ -1,0 +1,417 @@
+.tablas-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.tablas-container .busqueda {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  text-align: left;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.tablas-container .busqueda label {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.tablas-container .busqueda input {
+  width: 30rem;
+  height: 2.5rem;
+  padding: 5px;
+  border: solid black 1px;
+  border-radius: 5px;
+}
+
+.tablas-container .busqueda button {
+  height: 3.5rem;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  border: solid 1px black;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to top, #24cf1e, #c6f7aa);
+}
+
+.tablas-container .busqueda button:hover {
+  background: linear-gradient(to top, #f30e79, #f554c5);
+  color: white;
+}
+
+.tablas-container .busqueda button img {
+  height: 30px;
+  width: 30px;
+}
+
+.tablas-container .tabla {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 3px;
+  margin-right: 1rem;
+  border-radius: 8px;
+  gap: 3px;
+  height: auto;
+  width: 99%;
+  margin-bottom: 1rem;
+}
+
+.tablas-container .tabla table {
+  width: 100%;
+  max-height: 30rem;
+  border-collapse: collapse; /* Cambiado a collapse */
+  overflow: hidden;
+  font-size: 1.1rem;
+  align-self: start;
+  overflow-y: auto;
+  border: 2px solid black;
+}
+
+.tablas-container .tabla th,
+.tablas-container .tabla td {
+  border: 1px solid black; /* Borde adicional en celdas para mantener la apariencia */
+  text-align: center;
+  padding: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 7rem;
+}
+
+.tablas-container .tabla th {
+  background-color: rgb(253, 87, 95);
+  height: 3rem;
+  border: 2px solid black;
+}
+
+.tablas-container .tabla tr {
+  background-color: white;
+}
+
+.tablas-container .tabla tr:nth-child(even) {
+  background-color: #f2f2f2; /* Color de fondo para filas pares */
+}
+
+.tablas-container .tabla tr:nth-child(odd) {
+  background-color: #cff8f5;
+}
+
+.tablas-container .tabla tr:hover {
+  background: linear-gradient(to top, #99f57b, #b5ee7f);
+}
+
+.tablas-container .tabla td button {
+  height: 2rem;
+  width: 7rem;
+  border: solid 1px black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.tablas-container .tabla td button:hover {
+  background: linear-gradient(to top, #f30e79, #f554c5);
+  color: white;
+}
+
+.tablas-container .tabla .button1 {
+  background: linear-gradient(to top, #b060f1, #b69af7);
+  font-weight: bold;
+}
+
+.tablas-container .tabla .button2 {
+  background: linear-gradient(to top, #ecd50a, #faf897);
+  font-weight: bold;
+}
+
+.tablas-container .tabla .button3 {
+  background: linear-gradient(to top, #fd6666, #f8911b);
+  font-weight: bold;
+}
+
+.tablas-container .tabla .button4 {
+  background: linear-gradient(to top, #4e9df7, #4ed1f1);
+  font-weight: bold;
+}
+
+.tablas-container .tabla .button5 {
+  background: linear-gradient(to top, #38b963, #7cf590);
+  font-weight: bold;
+}
+
+.tabla .status-box {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  margin-left: 1.5rem;
+  margin-right: 0.5rem;
+  border: 1px solid black;
+}
+
+.tabla .Activo {
+  background: rgb(34, 97, 180);
+  color: white;
+}
+
+.tabla .Inactivo {
+  background: red;
+  color: white;
+}
+
+.tablas-container .tabla .paginacion-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 3px;
+  gap: 3px;
+  justify-content: center;
+  height: 3rem;
+  border: none;
+}
+
+.tablas-container .tabla .paginacion-container button {
+  margin: 0.5rem 0;
+  padding: 5px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: solid black 1px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  background: linear-gradient(to top, #24cf1e, #c6f7aa);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tablas-container .tabla .paginacion-container button:hover {
+  background: linear-gradient(to top, #f30e79, #f554c5);
+  color: white;
+}
+
+.tablas-container .tabla .paginacion-container button:active {
+  background: linear-gradient(to top, #f30e79, #f554c5);
+  color: white;
+}
+
+.tablas-container .tabla .paginacion-final {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 3rem;
+  font-size: 14px;
+  border: none;
+}
+
+.admin-modal-establecimiento {
+  display: flex;
+  flex-direction: column;
+  background: rgb(241, 241, 241);
+  height: 70%;
+  width: 80%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+  border: 1px solid black;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.admin-modal-establecimiento .container {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.admin-modal-establecimiento .container .column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.admin-modal-establecimiento .container .column label {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.admin-modal-establecimiento .container .column input {
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 3rem;
+  width: 28rem;
+  padding: 5px;
+}
+
+.admin-modal-establecimiento .container .column select {
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 3rem;
+  width: 28rem;
+  padding: 5px;
+  background: white;
+}
+
+.admin-modal-establecimiento .botones {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.admin-modal-establecimiento .botones button {
+  height: 4rem;
+  width: 11rem;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  border: solid 1px black;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to top, #24cf1e, #c6f7aa);
+}
+
+.admin-modal-establecimiento .botones button img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.admin-modal-establecimiento .botones button:hover {
+  background: linear-gradient(to top, #f30e79, #f554c5);
+  color: white;
+}
+
+.admin-modal-establecimiento .tabla {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 3px;
+  margin-right: 1rem;
+  height: 12rem;
+  overflow-y: auto;
+  width: 98%;
+  margin-bottom: 1rem;
+}
+
+.admin-modal-establecimiento .tabla table {
+  width: 100%;
+  max-height: 30rem;
+  border-collapse: collapse; /* Cambiado a collapse */
+  overflow: hidden;
+  font-size: 1.1rem;
+  align-self: start;
+  overflow-y: auto;
+  border: 2px solid black;
+}
+
+.admin-modal-establecimiento .tabla th,
+.admin-modal-establecimiento .tabla td {
+  border: 1px solid black; /* Borde adicional en celdas para mantener la apariencia */
+  text-align: center;
+  padding: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 7rem;
+}
+
+.admin-modal-establecimiento .tabla th {
+  background-color: rgb(253, 87, 95);
+  height: 3rem;
+  border: 2px solid black;
+}
+
+.admin-modal-establecimiento .tabla tr {
+  background-color: white;
+  cursor: pointer;
+}
+
+.admin-modal-establecimiento .tabla tr:nth-child(even) {
+  background-color: #f2f2f2; /* Color de fondo para filas pares */
+}
+
+.admin-modal-establecimiento .tabla tr:nth-child(odd) {
+  background-color: #cff8f5;
+}
+
+.admin-modal-establecimiento .tabla tr:hover {
+  background: linear-gradient(to top, #99f57b, #b5ee7f);
+}
+
+.admin-modal-establecimiento .tabla td button {
+  height: 2rem;
+  width: 7rem;
+  border: solid 1px black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.admin-modal-establecimiento .tabla td button:hover {
+  background: linear-gradient(to top, #f30e79, #f554c5);
+  color: white;
+}
+
+.admin-modal-establecimiento .tabla .button1 {
+  background: linear-gradient(to top, #b060f1, #b69af7);
+  font-weight: bold;
+}
+
+.admin-modal-establecimiento .tabla .button2 {
+  background: linear-gradient(to top, #ecd50a, #faf897);
+  font-weight: bold;
+}
+
+.admin-modal-establecimiento .tabla .button3 {
+  background: linear-gradient(to top, #fd6666, #f8911b);
+  font-weight: bold;
+}
+
+.admin-modal-establecimiento .tabla .button4 {
+  background: linear-gradient(to top, #4e9df7, #4ed1f1);
+  font-weight: bold;
+}
+
+.admin-modal-establecimiento .tabla .button5 {
+  background: linear-gradient(to top, #38b963, #7cf590);
+  font-weight: bold;
+}
+
+.admin-modal-establecimiento .status-box {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  margin-left: 1.5rem;
+  margin-right: 0.5rem;
+  border: 1px solid black;
+}
+
+.admin-modal-establecimiento .Activo {
+  background: rgb(34, 97, 180);
+  color: white;
+}
+
+.admin-modal-establecimiento .Inactivo {
+  background: red;
+  color: white;
+}

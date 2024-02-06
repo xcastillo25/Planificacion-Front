@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Russo+One&display=swap");
+
+.areas-titulo {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.areas-titulo h1 {
+  font-size: 4rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: "Russo One", sans-serif;
+  font-weight: bold;
+}
+
+.areas-container {
+  display: grid;
+  grid-template-columns: 52rem auto;
+  gap: 1rem;
+}
+
+.areas-container .areas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.areas-container .areas div {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  gap: 1rem;
+  padding: 1rem;
+  width: 16rem;
+  height: 5rem;
+  text-align: left;
+  align-items: center;
+  justify-content: left;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.63);
+  background: linear-gradient(to right, #76d1f5, #2aece3);
+}
+
+.areas-container .areas div:hover {
+  background: linear-gradient(to right, #f30e79, #f554c5);
+  color: white;
+  scale: 1.07;
+}
+
+.areas-logo {
+  width: 4rem;
+  height: 4rem;
+}
+
+.areas-container .titulos {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.areas-container .titulos h1 {
+  font-size: 4rem;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: "Russo One", sans-serif;
+  font-weight: bold;
+  color: rgb(5, 5, 187);
+}
+
+.areas-container .titulos .botones {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.areas-container .titulos .botones button {
+  border: 1px solid black;
+  width: 12rem;
+  height: 5rem;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.63);
+  background: linear-gradient(to right, #f1611f, #ecae2a);
+}
+
+.areas-container .titulos .botones button:hover {
+  background: linear-gradient(to right, #f30e79, #f554c5);
+  color: white;
+  scale: 1.07;
+}
+
+.areas-sub {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.areas-sub h1 {
+  font-size: 4rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: "Russo One", sans-serif;
+  font-weight: bold;
+  color: rgb(207, 66, 1);
+}

@@ -1,0 +1,63 @@
+.admin-areas-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-areas-container .areas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.areas-titulo button {
+  height: 3rem;
+  width: 9rem;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  border: solid 1px black;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(to top, #24cf1e, #c6f7aa);
+}
+
+.areas-titulo button img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.areas-titulo button:hover {
+  background: linear-gradient(to top, #f30e79, #f554c5);
+  color: white;
+}
+
+.admin-areas-container .areas div {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  gap: 1rem;
+  padding: 1rem;
+  width: 19rem;
+  height: 6rem;
+  text-align: left;
+  align-items: center;
+  justify-content: left;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.63);
+  background: linear-gradient(to right, #76d1f5, #2aece3);
+}
+
+.admin-areas-container .areas div:hover {
+  background: linear-gradient(to right, #f30e79, #f554c5);
+  color: white;
+  scale: 1.1;
+}

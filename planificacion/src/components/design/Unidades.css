@@ -1,0 +1,178 @@
+.unidades-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.unidades-container .unidades-titulo {
+  display: flex;
+  flex-direction: column;
+}
+
+.unidades-container .unidades-titulo h1 {
+  font-size: 4rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: "Russo One", sans-serif;
+  font-weight: bold;
+}
+
+.unidades-container .unidades-titulo h2 {
+  font-size: 3.5rem;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: "Russo One", sans-serif;
+  font-weight: bold;
+  color: rgb(5, 5, 187);
+}
+
+.unidades-container .unidades-titulo h3 {
+  font-size: 19px;
+}
+
+.unidades-container .unidades-datos {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.unidades-container .unidades-datos button {
+  background: linear-gradient(to right, #3fe715, #befa79);
+  border: 1px solid gray;
+  font-weight: lighter;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.63);
+  width: 7rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid rgb(24, 23, 23);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+}
+
+.unidades-container .unidades-datos button img {
+  height: 3rem;
+  width: 3rem;
+}
+
+.unidades-container .unidades-datos button:hover {
+  background: linear-gradient(to right, #f30e79, #f554c5);
+  color: white;
+}
+
+.unidades-container .unidades-datos select {
+  width: 7rem;
+  height: 2.3rem;
+  border-radius: 6px;
+  margin: 7px;
+  border: 1px solid rgb(17, 16, 16);
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  color: black;
+}
+
+.unidades-container .unidades-datos input {
+  width: 11rem;
+  height: 2.3rem;
+  border-radius: 6px;
+  margin: 7px;
+  border: 1px solid rgb(17, 16, 16);
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  color: black;
+}
+
+.unidades-container .unidades-contenido {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.unidades-container .unidades-contenido .unidad {
+  width: 20rem;
+  height: 19rem;
+  border: 1px solid rgb(148, 145, 145);
+  border-radius: 18px;
+  padding: 0.7rem;
+  background: white;
+  box-shadow: 0 0 5px #363636c4;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #76d1f5, #2aece3);
+  cursor: pointer;
+  border: 1px solid rgb(24, 23, 23);
+}
+
+.unidades-container .unidades-contenido .unidad:hover {
+  scale: 1.07;
+  box-shadow: 1px 5px 5px rgba(236, 18, 120, 0.774);
+}
+
+.unidades-container .unidades-contenido .unidad div {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.unidades-container .unidades-contenido .unidad div button {
+  width: 8rem;
+  height: 3rem;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 8rem;
+  height: 3rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: lighter;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.63);
+  border: 1px solid rgb(24, 23, 23);
+}
+
+.unidades-boton1 {
+  background: linear-gradient(to right, #3fe715, #befa79);
+}
+
+.unidades-boton1:hover {
+  background: linear-gradient(to right, #f30e79, #f554c5);
+  color: white;
+}
+
+.unidades-boton2 {
+  background: linear-gradient(to right, #f52727, #ff7a7a);
+}
+
+.unidades-boton2:hover {
+  background: linear-gradient(to right, #f30e79, #f554c5);
+  color: white;
+}
+
+.unidades-boton3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #f6fa17, #f7f32a);
+}
+
+.unidades-boton3:hover {
+  background: linear-gradient(to right, #f30e79, #f554c5);
+  color: white;
+}

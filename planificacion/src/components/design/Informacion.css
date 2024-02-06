@@ -1,0 +1,92 @@
+main section.middle .header h1 {
+  color: black;
+  font-size: 30px;
+}
+
+.title-span {
+  color: black;
+  font-size: 20px;
+}
+
+.informacion-content {
+  display: grid;
+  grid-template-columns: 14rem auto 14rem auto;
+  text-align: left;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.informacion-content .column1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  background: linear-gradient(to right, #76d1f5, #2aece3);
+  height: 19rem;
+  border-radius: 8px;
+  border: 1px solid rgb(43, 42, 42);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.63);
+}
+
+.informacion-content .column1 h2 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.informacion-content .column2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  background: linear-gradient(to right, #ffffff, #ffffff);
+  height: 19rem;
+  width: 95%;
+  border-radius: 8px;
+  border: 1px solid rgb(43, 42, 42);
+  box-shadow: 0 0 5px rgba(94, 93, 93, 0.63);
+}
+
+.informacion-content .column2 h2 {
+  font-weight: normal;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.informacion-grados {
+  margin-top: 0.5rem;
+}
+
+.informacion-grados .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.informacion-grados .container div {
+  width: 19rem;
+  height: 17rem;
+  border: 1px solid rgb(148, 145, 145);
+  border-radius: 18px;
+  padding: 0.7rem;
+  background: white;
+  box-shadow: 0 0 5px rgba(54, 54, 54, 0.767);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to top left, #54fade, #3ef584);
+  cursor: pointer;
+  border: 1px solid rgb(43, 42, 42);
+}
+
+.informacion-grados .container div:hover {
+  scale: 1.07;
+  box-shadow: 1px 5px 5px rgba(236, 18, 120, 0.774);
+}
+
+.numero-grado {
+  width: 9rem;
+  height: 9rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+}

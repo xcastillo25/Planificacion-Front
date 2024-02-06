@@ -1,0 +1,797 @@
+.temas-planificacion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.temas-planificacion .datos {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.temas-planificacion .planes {
+  display: grid;
+  grid-template-columns: 12rem 12rem 12rem 14rem 27rem 10rem;
+  gap: 4px;
+  background: linear-gradient(to right, #76d1f5, #2aece3);
+  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 8px;
+  width: 97%;
+}
+
+.temas-planificacion .planes .column1,
+.column2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.temas-planificacion .planes .column1,
+.column2 label {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.temas-planificacion .planes .column1 textarea {
+  border: 2px solid rgb(33, 95, 187);
+  padding: 5px;
+  font-size: 14px;
+  height: 12rem;
+  resize: none;
+  border-radius: 6px;
+  background: white;
+}
+
+.temas-planificacion .planes .column2 textarea {
+  border: 2px solid rgb(33, 95, 187);
+  padding: 5px;
+  font-size: 14px;
+  height: 5.15rem;
+  resize: none;
+  border-radius: 6px;
+  background: white;
+}
+
+.temas-planificacion .botones {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  gap: 1rem;
+}
+
+.temas-planificacion .botones button {
+  height: 3.5rem;
+  padding: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  border: solid 1px black;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to top, #24cf1e, #c6f7aa);
+}
+
+.temas-planificacion .botones button:hover {
+  background: linear-gradient(to top, #f30e79, #f554c5);
+  color: white;
+}
+
+.temas-planificacion .botones button img {
+  height: 30px;
+  width: 30px;
+}
+
+.temas-tabla {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  background: linear-gradient(to right, #76d1f5, #2aece3);
+  padding: 3px;
+  margin-right: 1rem;
+  border-radius: 8px;
+  gap: 3px;
+  height: auto;
+  width: 99%;
+  margin-bottom: 1rem;
+}
+
+.temas-tabla .busqueda {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  text-align: left;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.temas-tabla .busqueda label {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.temas-tabla .busqueda input {
+  width: 30rem;
+  height: 2.5rem;
+  padding: 5px;
+  border: solid black 1px;
+  border-radius: 5px;
+}
+
+.temas-tabla .busqueda button {
+  height: 3.5rem;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  border: solid 1px black;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to top, #24cf1e, #c6f7aa);
+}
+
+.temas-tabla .busqueda button:hover {
+  background: linear-gradient(to top, #f30e79, #f554c5);
+  color: white;
+}
+
+.temas-tabla .busqueda button img {
+  height: 30px;
+  width: 30px;
+}
+
+.temas-tabla .tabla {
+  display: flex;
+  flex-direction: column;
+  padding: 3px;
+  margin-right: 1rem;
+}
+
+.temas-tabla .tabla .paginacion-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 3px;
+  gap: 3px;
+  justify-content: center;
+  height: 3rem;
+  border: none;
+}
+
+.temas-tabla .tabla .paginacion-container button {
+  margin: 0.5rem 0;
+  padding: 5px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: solid black 1px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  background: linear-gradient(to top, #24cf1e, #c6f7aa);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.temas-tabla .tabla .paginacion-container button:hover {
+  background: linear-gradient(to top, #f30e79, #f554c5);
+  color: white;
+}
+
+.temas-tabla .tabla .paginacion-container button:active {
+  background: linear-gradient(to top, #f30e79, #f554c5);
+  color: white;
+}
+
+.temas-tabla .tabla .paginacion-final {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 3rem;
+  font-size: 14px;
+  border: none;
+}
+
+.temas-tabla .tabla table {
+  width: 100%;
+  max-height: 30rem;
+  border-collapse: collapse; /* Cambiado a collapse */
+  overflow: hidden;
+  font-size: 1.1rem;
+  margin: 0.5rem;
+  align-self: start;
+  overflow-y: auto;
+  border: 2px solid black;
+}
+
+.temas-tabla .tabla th,
+.temas-tabla .tabla td {
+  border: 1px solid black; /* Borde adicional en celdas para mantener la apariencia */
+  text-align: center;
+  padding: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 7rem;
+}
+
+.temas-tabla .tabla th {
+  background-color: rgb(253, 87, 95);
+  height: 3rem;
+  border: 2px solid black;
+}
+
+.temas-tabla .tabla tr {
+  background-color: white;
+  cursor: pointer;
+}
+
+.temas-tabla .tabla tr:nth-child(even) {
+  background-color: #f2f2f2; /* Color de fondo para filas pares */
+}
+
+.temas-tabla .tabla tr:nth-child(odd) {
+  background-color: #cff8f5;
+}
+
+.temas-tabla .tabla tr:hover {
+  background: linear-gradient(to top, #99f57b, #b5ee7f);
+}
+
+.temas-tabla .tabla td button {
+  height: 2rem;
+  width: 7rem;
+  border: solid 1px black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.temas-tabla .tabla td button:hover {
+  background: linear-gradient(to top, #f30e79, #f554c5);
+  color: white;
+}
+
+.button1 {
+  background: linear-gradient(to top, #76d1f5, #2aece3);
+  font-weight: bold;
+}
+
+.button2 {
+  background: linear-gradient(to top, #ec770a, #ffba7a);
+  font-weight: bold;
+}
+
+/* MODAL */
+.tema-modal-contenidos {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  height: 95%;
+  width: 95%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+  border: 1px solid black;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.tema-modal-contenidos .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  height: 100%;
+  width: 100%;
+}
+
+.tema-modal-contenidos .container div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  background: linear-gradient(to right, #76d1f5, #2aece3);
+  padding: 1rem;
+  align-items: top;
+}
+
+.tema-modal-contenidos .container div label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 3px;
+}
+
+.tema-modal-contenidos .container div input {
+  height: 3rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 20rem;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.tema-modal-contenidos .container div .botones {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  height: 5rem;
+  gap: 1rem;
+}
+
+.tema-modal-contenidos .container div .botones button {
+  height: 3.5rem;
+  width: 10rem;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  border: solid 1px black;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to top, #24cf1e, #c6f7aa);
+}
+
+.tema-modal-contenidos .container div .botones button img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.tema-modal-contenidos .container div .botones button:hover {
+  background: linear-gradient(to top, #f30e79, #f554c5);
+  color: white;
+}
+
+.tema-modal-contenidos .container div .busqueda {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  border: none;
+  align-self: start;
+  height: 5rem;
+}
+
+.tema-modal-contenidos .container div.busqueda input {
+  height: 3rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 27rem;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.tema-modal-contenidos .container div .busqueda select {
+  height: 3rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 15rem;
+  padding: 5px;
+  font-size: 16px;
+  background: white;
+}
+
+.tema-modal-contenidos .container div textarea {
+  border: 1px solid black;
+  padding: 5px;
+  font-size: 16px;
+  height: 7rem;
+  border-radius: 5px;
+  resize: none;
+}
+
+.tema-modal-contenidos .container .tabla {
+  border: none;
+  padding: 0px;
+  height: 34rem;
+}
+.tema-modal-contenidos .container div table {
+  width: 98.5%;
+  max-height: 30rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 2px solid black;
+  font-size: 1.1rem;
+  background: white;
+  margin: 0.5rem;
+  align-self: start;
+  overflow-y: auto;
+  border-collapse: collapse;
+}
+
+.tema-modal-contenidos .container div th {
+  border: 2px solid black;
+  text-align: center;
+  padding: 5px;
+  background-color: rgb(253, 87, 95);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 7rem;
+}
+
+.tema-modal-contenidos .container div td {
+  border: 1px solid black;
+  text-align: center;
+  padding: 3px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 7rem;
+  cursor: pointer;
+}
+
+.tema-modal-contenidos .container div tr:nth-child(even) {
+  background-color: #f2f2f2; /* Color de fondo para filas pares */
+}
+
+.tema-modal-contenidos .container div tr:nth-child(odd) {
+  background-color: #cff8f5;
+}
+
+.tema-modal-contenidos .container div tr:hover {
+  background: linear-gradient(to top, #99f57b, #b5ee7f);
+}
+
+.tema-modal-contenidos .container div th:nth-child(1),
+.tema-modal-contenidos .container div td:nth-child(1) {
+  width: 3rem;
+}
+
+.tema-modal-contenidos .container div .paginacion-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 3px;
+  gap: 3px;
+  justify-content: center;
+  height: 3rem;
+  border: none;
+}
+
+.tema-modal-contenidos .container div .paginacion-container button {
+  margin: 0.5rem 0;
+  padding: 5px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: solid black 1px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  background: linear-gradient(to top, #24cf1e, #c6f7aa);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tema-modal-contenidos .container div .paginacion-container button:hover {
+  background: linear-gradient(to top, #f30e79, #f554c5);
+  color: white;
+}
+
+.tema-modal-contenidos .container div .paginacion-container button:active {
+  background: linear-gradient(to top, #f30e79, #f554c5);
+  color: white;
+}
+
+.tema-modal-contenidos .container div .paginacion-final {
+  align-items: center;
+  height: 3rem;
+  font-size: 14px;
+  border: none;
+}
+
+.tema-modal-temas {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  height: 95%;
+  width: 95%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+  border: 1px solid black;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* MODAL Temas */
+.tema-modal-temas .container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: linear-gradient(to right, #76d1f5, #2aece3);
+  padding: 1rem;
+  align-items: top;
+}
+
+.tema-modal-temas .container .titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.tema-modal-temas .container .titulo h2 {
+  font-size: 20px;
+}
+
+.tema-modal-temas .container .busqueda {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tema-modal-temas .container .busqueda input {
+  border: 1px solid black;
+  width: 30rem;
+  height: 3rem;
+  border-radius: 5px;
+  padding: 8px 8px;
+  font-size: 17px;
+  text-align: left;
+}
+
+.tema-modal-temas .container .busqueda button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid black;
+  width: 10rem;
+  height: 4rem;
+  background: linear-gradient(to top, #24cf1e, #c6f7aa);
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  align-items: center;
+}
+
+.tema-modal-temas .container .busqueda h3 {
+  border: solid 1px black;
+  padding: 5px;
+  font-size: 16px;
+  background: rgb(248, 248, 248);
+  width: 47rem;
+  height: 3rem;
+  align-items: center;
+}
+
+.tema-modal-temas .container .busqueda button img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.tema-modal-temas .container .busqueda button:hover {
+  background: linear-gradient(to top, #f30e79, #f554c5);
+  color: white;
+}
+
+.tema-modal-temas .container .tabla {
+  padding: 0px;
+}
+
+.tema-modal-temas .container .tabla table {
+  width: 99.5%;
+  max-height: 30rem;
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 0.5px solid black;
+  font-size: 1.1rem;
+  background: white;
+  margin: 0.5rem;
+  align-self: start;
+  overflow-y: auto;
+  border: 2px solid black;
+}
+
+.tema-modal-temas .container .tabla th {
+  border: 2px solid black;
+  text-align: center;
+  padding: 5px;
+  background-color: rgb(253, 87, 95);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 7rem;
+}
+
+.tema-modal-temas .container .tabla td {
+  border: 1px solid black;
+  text-align: center;
+  padding: 3px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 7rem;
+  cursor: pointer;
+}
+
+.tema-modal-temas .container .tablaa tr:nth-child(even) {
+  background-color: #f2f2f2; /* Color de fondo para filas pares */
+}
+
+.tema-modal-temas .container .tabla tr:nth-child(odd) {
+  background-color: #cff8f5;
+}
+
+.tema-modal-temas .container .tabla tr:hover {
+  background: linear-gradient(to top, #99f57b, #b5ee7f);
+}
+
+.tema-modal-temas .container .tabla .paginacion-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  margin-top: 3px;
+  gap: 3px;
+  justify-content: center;
+  height: 3rem;
+  border: none;
+}
+
+.tema-modal-temas .container .tabla .paginacion-container button {
+  margin: 0.5rem 0;
+  padding: 5px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: solid black 1px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  background: linear-gradient(to top, #24cf1e, #c6f7aa);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  justify-content: center;
+}
+
+.tema-modal-temas .container .tabla .paginacion-container button:hover {
+  background: linear-gradient(to top, #f30e79, #f554c5);
+  color: white;
+}
+
+.tema-modal-temas .container .tabla .paginacion-container button:active {
+  background: linear-gradient(to top, #f30e79, #f554c5);
+  color: white;
+}
+
+.tema-modal-temas .container .tabla .paginacion-final {
+  align-items: center;
+  height: 3rem;
+  font-size: 14px;
+  border: none;
+  justify-content: center;
+  text-align: center;
+}
+
+.tema-modal-evaluacion {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  height: 80%;
+  width: 80%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+  border: 1px solid black;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.tema-modal-evaluacion .container {
+  display: grid;
+  grid-template-columns: auto 30rem;
+  width: 100%;
+  background: linear-gradient(to right, #76d1f5, #2aece3);
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.tema-modal-evaluacion .container .actividades {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tema-modal-evaluacion .container .datos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.tema-modal-evaluacion .container .actividades textarea {
+  border: 1px solid black;
+  height: 14rem;
+  resize: none;
+  font-size: 14px;
+  padding: 5px;
+}
+
+.tema-modal-evaluacion .container .datos select {
+  background: white;
+  height: 2.5rem;
+  font-size: 14px;
+  padding: 5px;
+  width: 25rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.tema-modal-evaluacion .container .datos input {
+  background: white;
+  height: 2.5rem;
+  font-size: 14px;
+  padding: 5px;
+  width: 25rem;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.tema-modal-evaluacion .container .datos input[type="date"] {
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.tema-modal-evaluacion .container .datos .botones {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: left;
+}
+
+.tema-modal-evaluacion .container .datos .botones button {
+  margin: 0.5rem 0;
+  padding: 5px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: solid black 1px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  background: linear-gradient(to top, #24cf1e, #c6f7aa);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  justify-content: center;
+  width: 10rem;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.tema-modal-evaluacion .container .datos .botones button:hover {
+  background: linear-gradient(to top, #f30e79, #f554c5);
+  color: white;
+}
+
+.tema-modal-evaluacion .container .datos .botones button img {
+  width: 3rem;
+  height: 3rem;
+}

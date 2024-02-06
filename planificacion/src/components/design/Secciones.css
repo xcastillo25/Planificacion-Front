@@ -1,0 +1,124 @@
+.secciones-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.secciones-container .secciones-titulo {
+  display: flex;
+  flex-direction: column;
+}
+
+.secciones-container .secciones-titulo div {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.secciones-container .secciones-titulo div h2 {
+  font-weight: normal;
+}
+
+.secciones-container .secciones-titulo div select {
+  width: 7rem;
+  height: 2.3rem;
+  border-radius: 6px;
+  margin: 7px;
+  border: 1px solid rgb(17, 16, 16);
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  color: black;
+}
+
+.secciones-container .secciones-titulo div button {
+  background: linear-gradient(to right, #3fe715, #befa79);
+  border: 1px solid gray;
+  font-weight: lighter;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.63);
+  width: 7rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid rgb(24, 23, 23);
+}
+
+.secciones-container .secciones-titulo div button:hover {
+  background: linear-gradient(to right, #f30e79, #f554c5);
+  color: white;
+}
+
+.secciones-container .secciones-grados {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.secciones-container .secciones-grados .grado {
+  width: 19rem;
+  height: 21.5rem;
+  border: 1px solid rgb(148, 145, 145);
+  border-radius: 18px;
+  padding: 0.7rem;
+  background: white;
+  box-shadow: 0 0 5px #363636c4;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to top left, #40f184, #87fad7);
+  cursor: pointer;
+  border: 1px solid rgb(24, 23, 23);
+}
+
+.secciones-container .secciones-grados .grado:hover {
+  scale: 1.07;
+  box-shadow: 1px 5px 5px rgba(236, 18, 120, 0.774);
+}
+
+.secciones-container .secciones-grados div button {
+  width: 8rem;
+  height: 3rem;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 8rem;
+  height: 3rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: lighter;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.63);
+  border: 1px solid rgb(24, 23, 23);
+}
+
+.secciones-container .secciones-grados .grado div {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.secciones-container .secciones-grados .grado div .boton1 {
+  background: linear-gradient(to right, #76d1f5, #2aece3);
+}
+
+.secciones-container .secciones-grados div .boton1:hover {
+  background: linear-gradient(to right, #f30e79, #f554c5);
+  color: white;
+}
+
+.secciones-container .secciones-grados .grado div .boton2 {
+  background: linear-gradient(to right, #f52727, #ff7a7a);
+}
+
+.secciones-container .secciones-grados div .boton2:hover {
+  background: linear-gradient(to right, #f30e79, #f554c5);
+  color: white;
+}
