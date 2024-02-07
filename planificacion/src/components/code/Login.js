@@ -29,7 +29,6 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const [idDocente, setIdDocente] = useState('');
     const [primerNombre, setPrimerNombre] = useState('');
     const [segundoNombre, setSegundoNombre] = useState('');
     const [otrosNombres, setOtrosNombres] = useState('');
@@ -40,7 +39,6 @@ const Login = () => {
     const [password1, setPassword1] = useState('');
     const [password2, setPassword2] = useState('');
     const [genero, setGenero] = useState('');
-    const [idUsuario, setIdUsuario] = useState('');
     const [director, setDirector] = useState('');
     const handleChangeGenero = (e) => {setGenero(e.target.value);};
     const handleChangeDirector = (e) => {setDirector(e.target.value);};
@@ -54,7 +52,6 @@ const Login = () => {
 
     const { login } = useAuth();
     const history = useNavigate();
-    const [error] = useState(null);
     
     const [isOpenRegistroModal, setIsOpenRegistroModal] = useState(false);
     const openRegistroModal = () => setIsOpenRegistroModal(true);
@@ -68,7 +65,9 @@ const Login = () => {
     const openRecuperacionModal = () => setIsOpenRecuperacionModal(true);
     const closeRecuperacionModal = () => setIsOpenRecuperacionModal(false);
 
+    const [isEntring, setIsEntring] = useState(false);
     const handleSubmit = async (e) => {
+        setIsEntring(true);
         e.preventDefault();
     
         let endpoint = 'docente/login/';
@@ -90,10 +89,11 @@ const Login = () => {
                 localStorage.setItem('genero', genero);
                 // Usar la función login para actualizar el estado de autenticación
                 login(token);
-    
+                setIsEntring(false);
                 history('/home');
             } else {
                 handleErrorMessage('Credenciales incorrectas.');
+                setIsEntring(false);
             }
         } catch (err) {
             // Si hay un error en la respuesta del backend
@@ -102,6 +102,7 @@ const Login = () => {
             } else {
                 handleErrorMessage('Error en la autenticación. Por favor, intenta de nuevo.');
             }
+            setIsEntring(false);
         }
     };
     
@@ -349,10 +350,11 @@ const Login = () => {
         setCodigoRecuperacion('');
       }; 
     
+    const [isLoading2, setIsLoading2] = useState(false);
     const enviarCodigoAEmail = async () => {
         
         try {
-          setIsLoading(true);
+          setIsLoading2(true);
           const response = await axios.post(`${API_URL}/codePassword`, { 
             correo:correoRecuperacion });
     
@@ -368,7 +370,7 @@ const Login = () => {
             handleErrorMessage('Hubo un error al enviar el código.');
           }
         } finally {
-          setIsLoading(false);
+          setIsLoading2(false);
         }
     };
     
@@ -404,9 +406,10 @@ const Login = () => {
                     </label>
                 </div>
                 <div className="botones">
-                    <button onClick={handleSubmit}>
+                    <button onClick={handleSubmit}
+                        disabled={isEntring}>
                         <img src={Log} alt="null"></img>
-                        {isLoading ? "Iniciando Sesión..." : "Iniciar Sesión"}
+                        {isEntring ? "Iniciando Sesión..." : "Iniciar Sesión"}
                     </button>
                     <button onClick={openRegistroModal}>
                         <img src={Register} alt="null"></img>
@@ -636,9 +639,9 @@ const Login = () => {
                 </input>
                 <button 
                 onClick={enviarCodigoAEmail}
-                disable={isLoading}>
+                disable={isLoading2}>
                     <img src={Send} alt="null"></img>
-                    {isLoading ? 'Enviando...' : 'Enviar Código'}
+                    {isLoading2 ? 'Enviando...' : 'Enviar Código'}
                 </button>
                 <h2>Código de Verificación:</h2>
                 <input type="texto"

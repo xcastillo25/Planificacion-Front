@@ -128,7 +128,7 @@
   display: flex;
   flex-direction: column;
   background: white;
-  height: 88%;
+  height: 89%;
   width: 77%;
   position: fixed;
   top: 50%;
@@ -240,8 +240,8 @@
   flex-direction: row;
   align-items: center;
   border: 1px solid black;
-  width: 10rem;
-  height: 3.5rem;
+  width: 12rem;
+  height: 4rem;
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
@@ -266,7 +266,7 @@
   display: flex;
   flex-direction: column;
   background: white;
-  height: 88%;
+  height: 89%;
   width: 60%;
   position: fixed;
   top: 50%;
@@ -363,7 +363,7 @@
   align-items: center;
   border: 1px solid black;
   width: 10rem;
-  height: 3.5rem;
+  height: 4rem;
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
@@ -388,7 +388,7 @@
   display: flex;
   flex-direction: column;
   background: white;
-  height: 59%;
+  height: 61%;
   width: 40%;
   position: fixed;
   top: 50%;
@@ -423,7 +423,7 @@
 }
 
 .recuperacion-modal-suscripcion .container button {
-  height: 3.5rem;
+  height: 4rem;
   padding: 1rem;
   background: linear-gradient(to right, #3fe715, #befa79);
   font-size: 14px;
@@ -453,6 +453,7 @@
 
 .recuperacion-modal-suscripcion .botones button {
   width: 13rem;
+  height: 4rem;
 }
 
 .recuperacion-modal-suscripcion .container img {

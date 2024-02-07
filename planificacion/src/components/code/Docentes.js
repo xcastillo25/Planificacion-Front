@@ -12,7 +12,6 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Docentes = ({plataforma, setPlataformaVisible, userId}) => {
 
-    const [idDocente, setIdDocente] = useState('');
     const [primerNombre, setPrimerNombre] = useState('');
     const [segundoNombre, setSegundoNombre] = useState('');
     const [otrosNombres, setOtrosNombres] = useState('');
@@ -95,8 +94,9 @@ const Docentes = ({plataforma, setPlataformaVisible, userId}) => {
         fetchData();
     }, [userId]);
 
+    const [isLoading2, setIsLoading2] = useState(false);
     const actualizarDocente = async () => {
-        setIsLoading(true);
+        setIsLoading2(true);
 
         try {
             const response = await axios.put(`${API_URL}/docente/${userId}`, {
@@ -115,7 +115,7 @@ const Docentes = ({plataforma, setPlataformaVisible, userId}) => {
 
             console.log(response);
             handleSuccessMessage('Docente modificado con éxito.')
-            setIsLoading(false);
+            setIsLoading2(false);
             resetPassword();
             fetchData();
         } catch (error){
@@ -124,7 +124,7 @@ const Docentes = ({plataforma, setPlataformaVisible, userId}) => {
             } else {
                 handleErrorMessage('Hubo un error al actualizar al estudiante.');
             }
-            setIsLoading(false);
+            setIsLoading2(false);
         }
     };
 
@@ -311,9 +311,9 @@ const Docentes = ({plataforma, setPlataformaVisible, userId}) => {
                 </div>
                 <div className="botones">
                     <button onClick={actualizarDocente} 
-                        disabled={isLoading}>
+                        disabled={isLoading2}>
                         <img src={Edit} alt="null"></img>
-                        {isLoading ? "Actualizando..." :"Actualizar"}
+                        {isLoading2 ? "Actualizando..." :"Actualizar"}
                     </button>
                 </div>
                 <h1>Datos del Usuario:</h1>

@@ -109,7 +109,7 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, userId}) => {
             if (error.response && error.response.data && error.response.data.error) {
                 handleErrorMessage(error.response.data.error);
             } else {
-                handleErrorMessage('Hubo un error al actualizar al estudiante.');
+                handleErrorMessage('Hubo un error al actualizar el docente.');
             }
             setIsLoading(false);
         }
@@ -225,7 +225,7 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, userId}) => {
                         <input 
                             value={apellidos}
                             onChange={(e) => setApellidos(e.target.value)}
-                            placeholder="Ingresa los apellidos"></input>
+                            placeholder="Ingresa tus apellidos"></input>
                     </div>
                     <div className="column">
                         <label>

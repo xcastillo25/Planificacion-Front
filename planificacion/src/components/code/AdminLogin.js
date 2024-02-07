@@ -50,9 +50,10 @@ const Login = () => {
     const openRecuperacionModal = () => setIsOpenRecuperacionModal(true);
     const closeRecuperacionModal = () => setIsOpenRecuperacionModal(false);
 
+    const [isEntring, setIsEntring] = useState(false);
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+        setIsEntring(true)
         let endpoint = 'usuario/login/';
         let url = `${API_URL}/${endpoint}`;
     
@@ -69,10 +70,11 @@ const Login = () => {
                 localStorage.setItem('rol', rol);
                 // Usar la función login para actualizar el estado de autenticación
                 login(token);
-    
+                setIsEntring(false);
                 history('/adminhome');
             } else {
                 handleErrorMessage('Credenciales de administrador incorrectas.');
+                setIsEntring(false);
             }
         } catch (err) {
             // Si hay un error en la respuesta del backend
@@ -81,6 +83,7 @@ const Login = () => {
             } else {
                 handleErrorMessage('Error en la autenticación. Por favor, intenta de nuevo.');
             }
+            setIsEntring(false);
         }
     };
     
@@ -308,9 +311,10 @@ const Login = () => {
                     </label>
                 </div>
                 <div className="botones">
-                    <button onClick={handleSubmit}>
+                    <button onClick={handleSubmit}
+                    disabled={isEntring}>
                         <img src={Log} alt="null"></img>
-                        {isLoading ? "Iniciando Sesión..." : "Iniciar Sesión"}
+                        {isEntring ? "Iniciando Sesión..." : "Iniciar Sesión"}
                     </button>
                     <button onClick={openRegistroModal}>
                         <img src={Register} alt="null"></img>
