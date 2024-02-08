@@ -121,3 +121,29 @@
   background: none;
   cursor: pointer;
 }
+
+@media screen and (max-width: 600px) {
+  .docentes-container {
+    width: 34rem;
+    align-items: center;
+  }
+
+  .docentes-container .contenido {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .docentes-container .contenido .column {
+    align-items: center;
+  }
+
+  .docentes-container .password {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .docentes-container .password .column {
+    gap: 0.5rem;
+  }
+}

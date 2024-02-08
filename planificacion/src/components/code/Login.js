@@ -639,7 +639,7 @@ const Login = () => {
                 </input>
                 <button 
                 onClick={enviarCodigoAEmail}
-                disable={isLoading2}>
+                disabled={isLoading2}>
                     <img src={Send} alt="null"></img>
                     {isLoading2 ? 'Enviando...' : 'Enviar Código'}
                 </button>

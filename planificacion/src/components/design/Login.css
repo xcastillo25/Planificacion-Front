@@ -460,3 +460,59 @@
   width: 3rem;
   height: 3rem;
 }
+
+@media screen and (max-width: 600px) {
+  .Login {
+    height: 100vh;
+  }
+
+  .login-modal-registro {
+    width: 90%;
+    height: 99%;
+    gap: 0rem;
+    padding: 3px;
+  }
+  .login-modal-registro .container {
+    width: 70%;
+    gap: 0.5rem;
+    margin-top: 0px;
+    padding: 0px;
+  }
+
+  .login-modal-registro .container .datos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin-top: 0px;
+  }
+
+  .login-modal-registro .container .password {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin-top: 0px;
+  }
+
+  .login-modal-registro .container .password .column {
+    width: 100%;
+    margin-top: 0px;
+  }
+
+  .login-modal-registro .container .password .column input {
+    width: 16rem;
+  }
+
+  .login-modal-suscripcion {
+    width: 90%;
+    height: 81%;
+  }
+
+  .login-modal-suscripcion .container .datos {
+    grid-template-columns: 1fr;
+  }
+
+  .recuperacion-modal-suscripcion {
+    width: 90%;
+    height: 46%;
+    text-align: center;
+  }
+}

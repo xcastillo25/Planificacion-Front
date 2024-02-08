@@ -131,6 +131,8 @@ const Dashboard = () => {
                 <img src={logo} className="logo" alt="logo"
                 title="Si no puedes cerrar sesión, presiona doble clic en la foto de perfil."/>
                 <h2 className="titulo-logo">SISTEMA DE PLANIFICACIÓN ESCOLAR</h2>
+                <span className="material-icons-sharp" id="menu-btn" onClick={() => setAsideVisible(!asideVisible)}
+                style={{color:'gray', cursor:'pointer', marginRight:'1rem'}}>menu</span>
         </div>
         <nav>
             <div className="container">

@@ -90,3 +90,41 @@ main section.middle .header h1 {
   margin-top: 1rem;
   font-size: 2rem;
 }
+
+@media screen and (max-width: 600px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    width: 35rem;
+  }
+
+  main section.middle .header h1 {
+    color: black;
+    font-size: 25px;
+  }
+
+  .informacion-content {
+    grid-template-columns: 10rem auto;
+  }
+
+  .informacion-content .column2 {
+    width: 22rem;
+  }
+
+  .informacion-content .column2 h2 {
+    font-size: 17px;
+  }
+
+  .informacion-grados {
+    width: 34rem;
+  }
+
+  .informacion-grados .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .informacion-grados .container div {
+    width: 16rem;
+  }
+}

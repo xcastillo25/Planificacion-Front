@@ -194,6 +194,10 @@ nav {
   border: rgb(129, 129, 129) solid 2px;
 }
 
+.logo-container span {
+  display: none;
+}
+
 .titulo-logo {
   color: rgb(11, 11, 12);
   text-align: left;
@@ -506,98 +510,100 @@ nav .profile-area button#menu-btn {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.185);
 }
 
-/* ============= MEDIA QUERIES FOR TABLETS =============== */
-@media screen and (max-width: 1024px) {
-  nav .search-bar {
+/* ============= MEDIA QUERIES FOR MOBILE PHONES =============== */
+@media screen and (max-width: 600px) {
+  nav {
+    padding: 8px;
+  }
+
+  nav .profile {
+    gap: 1rem;
+    flex-direction: column;
+  }
+
+  nav .container .bienvenido h2 {
+    font-size: 20px;
+  }
+
+  nav .container .date {
     display: none;
   }
 
-  nav .profile-area {
-    gap: 2rem;
+  nav .icon-bar {
+    justify-content: right;
+    text-align: right;
   }
 
-  nav .profile-area button#menu-btn {
+  .logo-container {
+    position: relative;
+    width: 31rem;
+    height: 5rem;
+  }
+
+  .logo-container h2 {
+    font-size: 15px;
+  }
+
+  .titulo-logo {
+    margin: 0;
+  }
+
+  .logo-container span {
     display: inline;
-    background: transparent;
-    color: var(--color-dark);
+  }
+
+  .logo-container img {
+    width: 5rem;
+  }
+
+  nav .container {
+    display: flex;
+    width: 100%;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  aside {
+    position: relative;
+    position: fixed;
+    width: 15rem;
   }
 
   main {
-    grid-template-columns: 1fr;
+    padding: 0 15px;
   }
 
-  main aside {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    z-index: 3;
-    background: white;
-    width: 22rem;
-    height: 100vh;
-    box-shadow: 2rem 0 2rem var(--color-primary-light);
-    display: none;
-    animation: showSidebar 500ms ease forwards;
+  main aside .sidebar a {
+    width: 15rem;
+    margin: 0;
   }
 
-  @keyframes showSidebar {
-    to {
-      left: 0;
-    }
+  main aside .sidebar a span {
+    margin-left: 1rem;
   }
 
-  main aside button#close-btn {
-    display: inline-block;
-    width: 3rem;
-    height: 3rem;
+  main aside .sidebar a.active {
+    background: rgb(203, 243, 243);
+    color: var(--color-primary);
+  }
+
+  main aside .sidebar a.active:before {
+    content: "";
+    width: 6px;
+    height: 100%;
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 4;
-    background: transparent;
-    color: var(--color-dark);
+    background: linear-gradient(to bottom, #f30e79, #f554c5);
   }
 
-  button:hover {
-    cursor: pointer;
-  }
-
-  main aside .sidebar {
-    margin-top: 4rem;
-  }
-
-  main aside .updates {
-    display: none;
-  }
-
-  main canvas {
-    margin: 3rem 0 1rem;
-  }
-}
-
-/* ============= MEDIA QUERIES FOR MOBILE PHONES =============== */
-@media screen and (max-width: 600px) {
-  nav .profile-area {
-    gap: 2.6rem;
-  }
-
-  nav .profile h5,
-  nav .profile span {
-    display: none;
-  }
-
-  main section.middle .cards {
-    grid-template-columns: 1fr;
-  }
-
-  main section.middle .fast-payment {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 3rem;
-    gap: 1.4rem;
-  }
-
-  .aside-visible {
-    display: block;
+  main aside .sidebar a:hover {
+    color: black;
+    font-size: 2rem;
+    border-radius: 1rem;
+    width: 90%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background: linear-gradient(to bottom right, #54b3d8, #23cacf);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   }
 
   .aside-hidden {

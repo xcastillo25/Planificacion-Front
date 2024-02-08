@@ -38,7 +38,7 @@
 }
 
 .establecimiento-container .container-datos .column1 button {
-  width: 10rem;
+  width: 11rem;
   height: 3.5rem;
   border-radius: 6px;
   cursor: pointer;
@@ -55,6 +55,10 @@
 .establecimiento-container .container-datos .column1 button:hover {
   background: linear-gradient(to right, #f30e79, #f554c5);
   color: white;
+}
+
+.establecimiento-container .container-botones {
+  display: none;
 }
 
 .establecimiento-container .container-datos .column1 div {
@@ -203,4 +207,112 @@
 .establecimiento-container .establecimiento-datos .content div button:hover {
   background: linear-gradient(to right, #f30e79, #f554c5);
   color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .establecimiento-container {
+    width: auto;
+  }
+
+  .establecimiento-container .container-datos {
+    grid-template-columns: 1fr;
+    width: 33rem;
+    padding: 15px;
+    gap: 0;
+  }
+
+  .establecimiento-container .container-datos .column1 {
+    margin: 0;
+  }
+
+  .establecimiento-container .container-datos .column1 h2 {
+    font-size: 15px;
+    width: 9rem;
+  }
+
+  .establecimiento-container .container-datos .column1 input {
+    width: 20rem;
+  }
+
+  .establecimiento-container .container-datos .column1 button {
+    display: none;
+  }
+
+  .establecimiento-container .container-datos .column2 {
+    margin: 0;
+  }
+
+  .establecimiento-container .container-datos .column2 h2 {
+    font-size: 15px;
+    width: 9rem;
+  }
+
+  .establecimiento-container .container-datos .column2 input {
+    width: 20rem;
+  }
+
+  .establecimiento-container .container-datos .column2 select {
+    width: 20rem;
+  }
+
+  .establecimiento-container .container-datos .column3 {
+    height: 23rem;
+    margin-top: 1rem;
+  }
+
+  .establecimiento-container .container-botones {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 34rem;
+  }
+
+  .establecimiento-container .container-botones div {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .establecimiento-container .container-botones div button {
+    width: 11rem;
+    height: 3.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    background: linear-gradient(to right, #76d1f5, #2aece3);
+    border: 1px solid rgb(24, 23, 23);
+    font-weight: lighter;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.63);
+    border: 1px solid rgb(24, 23, 23);
+  }
+
+  .establecimiento-container .container-botones div button:hover {
+    background: linear-gradient(to right, #f30e79, #f554c5);
+    color: white;
+  }
+
+  .establecimiento-container .establecimiento-datos {
+    width: 34rem;
+    display: flex;
+  }
+
+  .establecimiento-container .establecimiento-datos .content {
+    display: flex;
+    height: 20rem;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  .establecimiento-container .establecimiento-datos .content div {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+  }
 }

@@ -386,7 +386,7 @@ const Establecimientos = ({plataforma, setPlataformaVisible, userId}) => {
                                 >
                                     Limpiar
                                 </button>
-                            </div>
+                        </div>
                     </div>
                     <div className="column2">
                         <div>
@@ -453,6 +453,33 @@ const Establecimientos = ({plataforma, setPlataformaVisible, userId}) => {
                                 Borrar
                             </button>}
                         </div>
+                    </div>
+                </div>
+
+                <div className="container-botones">
+                    <div>
+                        {botonesVisibles && (
+                            <button tabIndex="15" 
+                            onClick={registrarEstablecimiento}
+                            disabled={isLoading}>
+                                {isLoading ? "Guardando..." : "Guardar Establecimiento"}
+                            </button>
+                        )}
+                        {!botonesVisibles && (
+                            <button tabIndex="16"
+                            onClick={actualizarEstablecimiento}
+                            disabled = {isLoading}>
+                                {isLoading ? "Actualizando..." : "Actualizar Establecimiento"}
+                            </button>
+                        )}
+                            <button 
+                            tabIndex="15" 
+                            onClick={() => {
+                                resetForm();
+                                setBotonesVisibles(true);}}
+                            >
+                                Limpiar
+                            </button>
                     </div>
                 </div>
                 
