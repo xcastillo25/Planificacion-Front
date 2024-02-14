@@ -415,3 +415,25 @@
   background: red;
   color: white;
 }
+
+@media screen and (max-width: 600px) {
+  .tablas-container {
+    width: 34rem;
+  }
+
+  .tablas-container .tabla {
+    width: 34rem;
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  .tablas-container .tabla td button {
+    width: 6rem;
+  }
+
+  .tabla .status-box {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 60px;
+  }
+}

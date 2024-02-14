@@ -61,3 +61,23 @@
   color: white;
   scale: 1.1;
 }
+
+@media screen and (max-width: 600px) {
+  .areas-titulo {
+    flex-direction: column;
+    width: 34rem;
+  }
+
+  .admin-areas-container {
+    width: 34rem;
+  }
+
+  .admin-areas-container .areas {
+    grid-template-columns: 1fr 1fr;
+    width: 32rem;
+  }
+
+  .admin-areas-container .areas div {
+    width: 15.5rem;
+  }
+}

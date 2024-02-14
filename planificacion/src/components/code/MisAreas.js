@@ -69,8 +69,9 @@ const MisAreas=({plataforma, setPlataformaVisible, userId, seccion, setMisSeccio
             </div>
             <div className="areas-titulo">
                 <h1>{seccion.grado} {seccion.seccion}</h1>
+                <h2>Selecciona un Área o Subárea:</h2>
             </div>
-            <h1>Selecciona un Área o Subárea:</h1>
+            
             <div className="areas-container">
                 {botonesVisibles && (
                     <div className="areas">

@@ -85,8 +85,9 @@ const MisAreas=({plataforma, setPlataformaVisible, idGrado, setIdGrado, setIdAre
                     <img src={Back} alt="null"></img>
                     Grados
                 </button>
+                <h2>Selecciona un Área o Subárea:</h2>
             </div>
-            <h1>Selecciona un Área o Subárea:</h1>
+    
             <div className="admin-areas-container">
                 {botonesVisibles && (
                     <div className="areas">
