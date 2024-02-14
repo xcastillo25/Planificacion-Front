@@ -123,8 +123,8 @@ const Unidades = ({plataforma, setPlataformaVisible, seccion, setMisSecciones, s
           let posY = 1;
 
           if (encabezado.logotipo) {
-            const imgWidth = 3; 
-            const imgHeight = 3;
+            const imgWidth = 1; 
+            const imgHeight = 1;
       
             // Centrar la imagen
             const xImg = (doc.internal.pageSize.width - imgWidth) / 2;

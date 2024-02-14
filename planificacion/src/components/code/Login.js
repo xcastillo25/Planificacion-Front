@@ -11,6 +11,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { FaWhatsapp, FaBook, FaYoutube } from 'react-icons/fa';
+
 import logo from '../../assets/logo.png';
 import Save from '../../assets/Save.png';
 import Cancel from '../../assets/Cancel.png';
@@ -379,6 +381,16 @@ const Login = () => {
         }
     };
     
+   
+    const enviarWhatsapp = () => {
+        const numeroWhatsapp = '+50249643635'; // Reemplaza con el número deseado
+        const mensaje = 'Hola, ¿Puedes darme información sobre el Sistema de Planificación Escolar?';
+
+        const enlaceWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(mensaje)}`;
+
+        window.open(enlaceWhatsapp, '_blank');
+    };
+
     return (
         <>
         <section className="Login" id="Login">
@@ -424,6 +436,15 @@ const Login = () => {
                         <img src={Suscribe} alt="null"></img>
                         Suscríbete
                     </button>
+                    <div className="youtube-button" title="Guía Rápida de Inicio" onClick={enviarWhatsapp}>
+                        <FaYoutube />
+                    </div>
+                    <div className="book-button" title="Guía Rápida de Inicio" onClick={enviarWhatsapp}>
+                        <FaBook />
+                    </div>
+                    <div className="whatsapp-button" title="Conversemos por whatsapp" onClick={enviarWhatsapp}>
+                        <FaWhatsapp />
+                    </div>
                 </div>
             </div>
         </section>
@@ -584,6 +605,10 @@ const Login = () => {
             <div className="container">
                 <h1>Información:</h1>
                 <div className="informacion">
+                    <h2>Primero crea un usuario, luego puedes adquirir tu suscripción realizando un depósito 
+                        a la cuenta de Banco Industrial o comunicarte por 
+                        medio de WatsApp al número 4964-3635 para recibir información.</h2>
+                    
                     <h3>Cuenta a la que puedes realizar el depósito:</h3>
                     <img src={CuentaBI} alt="null"></img>
                 </div>

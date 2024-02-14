@@ -653,6 +653,8 @@ nav .profile-area button#menu-btn {
     position: relative;
     position: fixed;
     width: 15rem;
+
+    height: 50rem;
   }
 
   main {
@@ -704,5 +706,13 @@ nav .profile-area button#menu-btn {
 
   .advertencia h1 {
     font-size: 1rem;
+  }
+
+  main .licencia-full h1 {
+    width: 13.5rem;
+  }
+
+  main .licencia-full h2 {
+    width: 13.5rem;
   }
 }
