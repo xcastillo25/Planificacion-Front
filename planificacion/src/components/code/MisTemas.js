@@ -1286,7 +1286,9 @@ const MisTemas=({plataforma, setPlataformaVisible, seccion, area, idArea, userId
                                         </button>
                                     </div>
 
-                                    
+                                    <div className="paginacion-final">
+                                        Página {currentPageTemas} de {totalPagesTemas}
+                                    </div>
                                 </>
                             ) : (
                                 <p style={{

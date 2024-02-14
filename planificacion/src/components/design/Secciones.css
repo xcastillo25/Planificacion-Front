@@ -122,3 +122,26 @@
   background: linear-gradient(to right, #f30e79, #f554c5);
   color: white;
 }
+
+@media screen and (max-width: 600px) {
+  .secciones-container {
+    width: 34rem;
+  }
+
+  .secciones-container .secciones-titulo {
+    flex-direction: column;
+  }
+
+  .secciones-container .secciones-titulo div {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .secciones-container .secciones-titulo div select {
+    margin: 0px;
+  }
+
+  .secciones-container .secciones-grados {
+    grid-template-columns: 1fr;
+  }
+}

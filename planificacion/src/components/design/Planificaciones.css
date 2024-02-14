@@ -432,7 +432,6 @@
   display: flex;
   flex-direction: column;
   background: linear-gradient(to right, #76d1f5, #2aece3);
-
   width: 100%;
 }
 
@@ -545,4 +544,80 @@
 .planificacion-modal-detalles .container .botones button img {
   width: 3rem;
   height: 3rem;
+}
+
+@media screen and (max-width: 600px) {
+  .planificacion-titulo {
+    width: 34rem;
+  }
+
+  .planificacion-container {
+    width: 34rem;
+  }
+
+  .planificacion-container .botones {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .planificacion-container .buscar {
+    flex-direction: column;
+  }
+
+  .planificacion-container .tabla .paginacion-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .planificacion-modal-temas {
+    width: 90%;
+    height: 80%;
+  }
+
+  .planificacion-modal-temas .container {
+    height: 100%;
+  }
+
+  .planificacion-modal-temas .container .busqueda {
+    flex-direction: column;
+  }
+
+  .planificacion-modal-temas .container .tabla .paginacion-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .planificacion-modal-detalles {
+    width: 90%;
+  }
+
+  .planificacion-modal-detalles .container .planes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .planificacion-modal-detalles .container .planes div textarea {
+    width: 14rem;
+  }
+
+  .planificacion-modal-detalles .container .actividades {
+    flex-direction: column;
+  }
+
+  .planificacion-modal-detalles .container .actividades div textarea {
+    width: 28.5rem;
+  }
+
+  .planificacion-modal-detalles .container .datos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .planificacion-modal-detalles .container .datos div input {
+    width: 14rem;
+  }
+
+  .planificacion-modal-detalles .container .datos div label {
+    font-size: 13px;
+  }
 }

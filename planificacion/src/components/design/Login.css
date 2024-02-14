@@ -128,7 +128,7 @@
   display: flex;
   flex-direction: column;
   background: white;
-  height: 89%;
+  height: 95%;
   width: 77%;
   position: fixed;
   top: 50%;
@@ -226,6 +226,52 @@
   cursor: pointer;
   width: 1rem;
   color: blue;
+}
+
+.login-modal-registro .container .terminos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.login-modal-registro .container .terminos input {
+  border: 1px solid black;
+  width: 2rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  cursor: pointer;
+  margin-right: 1rem;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-modal-registro .container .terminos input::before {
+  content: "\2713"; /* Caracter Unicode de marca de verificación */
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: transparent; /* Hacer el símbolo transparente por defecto */
+}
+
+.login-modal-registro .container .terminos input:checked::before {
+  color: blue; /* Cambiar el color del símbolo cuando el checkbox está seleccionado */
+}
+
+.login-modal-registro .container .terminos label {
+  font-size: 15px;
+}
+
+.login-modal-registro .container .terminos a {
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  text-decoration: underline;
 }
 
 .login-modal-registro .container .botones {
@@ -362,7 +408,7 @@
   flex-direction: row;
   align-items: center;
   border: 1px solid black;
-  width: 10rem;
+  width: 12rem;
   height: 4rem;
   border-radius: 6px;
   cursor: pointer;

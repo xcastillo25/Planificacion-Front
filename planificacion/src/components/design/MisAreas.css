@@ -113,3 +113,19 @@
   font-weight: bold;
   color: rgb(207, 66, 1);
 }
+
+@media screen and (max-width: 600px) {
+  .areas-titulo {
+    width: 34rem;
+    flex-direction: row;
+  }
+
+  .areas-container {
+    width: 34rem;
+    grid-template-columns: auto;
+  }
+
+  .areas-container .areas {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -58,7 +58,7 @@ const Dashboard = () => {
 
     const logout = () => {
     localStorage.removeItem('token'); // Elimina el token del almacenamiento local
-    navigate('/session'); // Redirige al usuario a la página de inicio de sesión
+    navigate('/adminsession'); // Redirige al usuario a la página de inicio de sesión
     }
 
     const [currentDateTime, setCurrentDateTime] = useState(new Date());

@@ -28,6 +28,7 @@ const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [aceptoTerminos, setAceptoTerminos] = useState(false);
 
     const [primerNombre, setPrimerNombre] = useState('');
     const [segundoNombre, setSegundoNombre] = useState('');
@@ -77,7 +78,8 @@ const Login = () => {
             const response = await axios.post(url, { correo: email, password: password });
     
             if (response && response.data) {
-                const { token, id_docente, primer_nombre, segundo_nombre, otros_nombres, primer_apellido, segundo_apellido, genero } = response.data;
+                const { token, id_docente, primer_nombre, segundo_nombre, otros_nombres, primer_apellido, 
+                        segundo_apellido, genero, fecha_prueba, licencia } = response.data;
     
                 localStorage.setItem('token', token);
                 localStorage.setItem('id_docente', id_docente);
@@ -87,6 +89,9 @@ const Login = () => {
                 localStorage.setItem('primer_apellido', primer_apellido);
                 localStorage.setItem('segundo_apellido', segundo_apellido);
                 localStorage.setItem('genero', genero);
+                localStorage.setItem('fecha_prueba', fecha_prueba);
+                localStorage.setItem('licencia', licencia);
+
                 // Usar la función login para actualizar el estado de autenticación
                 login(token);
                 setIsEntring(false);
@@ -198,7 +203,7 @@ const Login = () => {
             console.log(response);
             handleSuccessMessage('Suscripción solicitada con éxito.');
             setIsLoading(false);
-            resetRecuperacion();
+            resetSuscripcion();
         } catch(error) {
             if (error.response && error.response.data && error.response.data.error) {
                 handleErrorMessage(error.response.data.error);
@@ -542,23 +547,36 @@ const Login = () => {
                     </div>
                     <div className="column">
                         <h4>*Requisitos de la contraseña:</h4>
-                        <h4>-Contener al menos 5 caracteres.</h4>
+                        <h4>-Contener al menos 5 letras.</h4>
                         <h4>-Contener al menos una mayúscula.</h4>
                         <h4>-Incluir un número.</h4>
                         <h4>-Incluir algún símbolo especial #$%&/.</h4>
                     </div>
                 </div>
+                <div className="terminos">
+                    <input
+                    type="checkbox"
+                    id="aceptoTerminos"
+                    checked={aceptoTerminos}
+                    onChange={() => setAceptoTerminos(!aceptoTerminos)}
+                    />
+                    <label>Acepto los</label>
+                    <a href="#enlaceTerminosCondiciones">Términos y Condiciones</a>
+                    <label>del servicio.</label>
+                </div>
                 <div className="botones">
-                    <button onClick={registrarDocente}
-                        disabled={isLoading}>
-                        <img src={Save} alt="null"></img>
-                        {isLoading ? "Guardando..." : "Guardar"}
+                    <button
+                    onClick={registrarDocente}
+                    disabled={!aceptoTerminos || isLoading}
+                    >
+                    <img src={Save} alt="null" />
+                    {isLoading ? "Guardando..." : "Guardar"}
                     </button>
                     <button onClick={closeRegistroModal}>
-                        <img src={Cancel} alt="null"></img>
-                        Cancelar
+                    <img src={Cancel} alt="null" />
+                    Cancelar
                     </button>
-                </div>
+      </div>
             </div>
         </Modal>
         <Modal isOpen={isOpenSuscripcionModal} onRequestClose={closeSuscripcionModal} className="login-modal-suscripcion">
@@ -594,7 +612,8 @@ const Login = () => {
                         <label>
                             Correo:
                         </label>
-                        <input 
+                        <input
+                            type = "email" 
                             value={correoSuscripcion}
                             onChange={(e) => setCorreoSuscripcion(e.target.value)}
                             placeholder="Ingresa el primer nombre"></input>

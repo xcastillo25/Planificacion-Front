@@ -163,3 +163,27 @@
   background: linear-gradient(to right, #f30e79, #f554c5);
   color: white;
 }
+
+@media screen and (max-width: 600px) {
+  .Grados .header h1 {
+    font-size: 10px;
+  }
+
+  .grados-ciclo-container {
+    width: 34rem;
+  }
+
+  .grados-ciclo-container .grado-select {
+    flex-direction: column;
+  }
+
+  .grados-ciclo-container .ciclo-content {
+    justify-content: center;
+    align-items: center;
+  }
+  .grados-ciclo-container .ciclo-content .ciclo {
+    width: 32rem;
+    justify-content: center;
+    align-items: center;
+  }
+}

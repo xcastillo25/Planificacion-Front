@@ -795,3 +795,116 @@
   width: 3rem;
   height: 3rem;
 }
+
+@media screen and (max-width: 600px) {
+  .temas-planificacion {
+    width: 34rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .temas-planificacion .planes {
+    grid-template-columns: auto auto;
+  }
+
+  .temas-planificacion .botones {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .temas-planificacion .botones button {
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+  }
+
+  .temas-tabla {
+    width: 34rem;
+  }
+
+  .temas-tabla .busqueda {
+    flex-direction: column;
+  }
+
+  .tema-modal-contenidos {
+    width: 90%;
+  }
+
+  .tema-modal-contenidos .container {
+    grid-template-columns: 1fr;
+    width: 30rem;
+  }
+
+  .tema-modal-contenidos .container div {
+    width: 30rem;
+    height: 55rem;
+  }
+
+  .tema-modal-contenidos .container div .botones {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 28rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tema-modal-contenidos .container div .busqueda {
+    flex-direction: column;
+    width: 28rem;
+    height: 11rem;
+  }
+
+  .tema-modal-contenidos .container .tabla {
+    width: 28rem;
+  }
+
+  .tema-modal-contenidos .container div .paginacion-container {
+    display: grid;
+    width: 28rem;
+    height: 8rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .tema-modal-contenidos .container div .paginacion-final {
+    width: 28rem;
+  }
+
+  .tema-modal-temas {
+    width: 90%;
+  }
+
+  .tema-modal-temas .container {
+    height: 100%;
+  }
+
+  .tema-modal-temas .container .busqueda {
+    flex-direction: column;
+  }
+
+  .tema-modal-temas .container .tabla .paginacion-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .tema-modal-evaluacion {
+    height: 90%;
+    width: 90%;
+  }
+
+  .tema-modal-evaluacion .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tema-modal-evaluacion .container .datos .botones {
+    justify-content: center;
+  }
+
+  .tema-modal-evaluacion .container .actividades {
+    justify-content: center;
+  }
+}

@@ -215,7 +215,7 @@ const Grados = ({plataforma, setPlataformaVisible, userId, setCicloEscolar})=> {
     };
 
     return(
-        <section clasName = "Grados" id = "Grados">
+        <section className = "Grados" id = "Grados">
             <ToastContainer />
             <div className = "header">
                 <span className="material-icons-sharp header-span title-span">filter_6</span>

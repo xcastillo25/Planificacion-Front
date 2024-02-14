@@ -34,6 +34,9 @@ const Dashboard = () => {
     const id = localStorage.getItem('id_docente');
     const primerNombre = localStorage.getItem('primer_nombre');
     const primerApellido = localStorage.getItem('primer_apellido');
+    const fechaPrueba = localStorage.getItem('fecha_prueba');
+    const licencia = localStorage.getItem('licencia');
+
     const [userData, setUserData] = useState({});
     const [expiracion, setExpiracion] = useState('');
     const [restantes, setRestantes] = useState('');
@@ -91,23 +94,28 @@ const Dashboard = () => {
   
     const formattedDateTime = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
   
+    function formatDate(dateString) {
+        const date = new Date(dateString);
+        const day = String(date.getDate()).padStart(2, '0');  // Día
+        const month = String(date.getMonth() + 1).padStart(2, '0');  // Mes (Enero es 0)
+        const year = date.getFullYear();  // Año
+      
+        return `${day}/${month}/${year}`;
+    }
+
     const fetchPrueba = async () => {
         try {
-            const response = await axios.get(`${API_URL}/calcularFechaExpiracion/${id}`);
-            setUserData = response.data;
-            
-            console.log('Datos de prueba:', userData);
-            
-            // O asignarlos a variables si es necesario
-            const { fechaExpiracion, diasRestantes } = userData;
-            
-            setExpiracion(fechaExpiracion);
-            setRestantes(diasRestantes);
-            
+            const response = await axios.get(`${API_URL}/suscripcion/${id}`);
+            setUserData(response.data);
+            console.log('Datos de la prueba:', response.data);
         } catch (error) {
             console.error('Error al obtener datos de prueba:', error);
         }
     };
+
+    useEffect(() => {
+        fetchPrueba();
+      }, [id]);
     
        
   return (
@@ -198,7 +206,24 @@ const Dashboard = () => {
                         <h4>Salir</h4>
                     </a>
                 </div>
-                
+
+                {licencia === 'TRIAL' ? (
+                    <div className="licencia-trial">
+                        <h3>Licencia:</h3>
+                        <h1>{licencia}</h1>
+                        <h3>Vence:</h3>
+                        <h2>{formatDate(fechaPrueba)}</h2>
+                    </div>
+                ) : (
+                    <div className="licencia-full">
+                        <h3>Licencia:</h3>
+                        <h1>COMPLETA</h1>
+                        <h3>Vence:</h3>
+                        {userData.suscripcionMasReciente && userData.suscripcionMasReciente.fecha_fin && (
+                        <h2>{formatDate(userData.suscripcionMasReciente.fecha_fin)}</h2>
+                    )}
+                    </div>
+                )}
             </aside>
             
             <section className='middle'>

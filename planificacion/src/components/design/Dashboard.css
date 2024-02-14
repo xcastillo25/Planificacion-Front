@@ -445,6 +445,92 @@ main aside .sidebar h4 {
   font-size: 1.3rem;
 }
 
+main .licencia-trial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+main .licencia-trial h3 {
+  color: blue;
+  font-size: 20px;
+}
+
+main .licencia-trial h1 {
+  background: linear-gradient(to bottom, rgb(255, 251, 0), rgb(248, 236, 125));
+  width: 12rem;
+  height: 4rem;
+  border: 1px solid black;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  box-shadow: 1px 3px 5px 2px rgba(0, 0, 0, 0.39);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+main .licencia-trial h2 {
+  background: linear-gradient(to bottom, rgb(255, 251, 0), rgb(248, 236, 125));
+  width: 15rem;
+  height: 4rem;
+  border: 1px solid black;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  box-shadow: 1px 3px 5px 2px rgba(0, 0, 0, 0.39);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 25px;
+}
+
+main .licencia-full {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+main .licencia-full h3 {
+  color: blue;
+  font-size: 20px;
+}
+
+main .licencia-full h1 {
+  background: linear-gradient(to bottom, rgb(22, 163, 4), rgb(6, 119, 16));
+  width: 15rem;
+  height: 4rem;
+  border: 1px solid black;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 1px 3px 5px 2px rgba(0, 0, 0, 0.39);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+main .licencia-full h2 {
+  background: linear-gradient(to bottom, rgb(22, 163, 4), rgb(6, 119, 16));
+  width: 15rem;
+  height: 4rem;
+  border: 1px solid black;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 1px 3px 5px 2px rgba(0, 0, 0, 0.39);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 25px;
+}
+
 /* ================= updates =============== */
 main aside .updates {
   border-radius: var(--border-radius-2);

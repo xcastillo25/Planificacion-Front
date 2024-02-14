@@ -298,6 +298,8 @@
   .establecimiento-container .establecimiento-datos {
     width: 34rem;
     display: flex;
+
+    margin-bottom: 1rem;
   }
 
   .establecimiento-container .establecimiento-datos .content {
@@ -311,7 +313,6 @@
   .establecimiento-container .establecimiento-datos .content div {
     display: flex;
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
   }

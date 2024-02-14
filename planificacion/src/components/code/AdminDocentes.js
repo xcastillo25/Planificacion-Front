@@ -200,8 +200,25 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, UserId}) => {
             const response = await axios.put(`${API_URL}/estado-docente/${id}`)
             console.log(response);
             handleSuccessMessage('Estado cambiado exitosamente');
+            fetchData();
         } catch(error) {
             handleErrorMessage('Error al actualizar el estado del docente', error);
+        }
+    }
+
+    const activarSuscripcion = async (id_suscripcion) => {
+        try{
+            const response = await axios.put(`${API_URL}/activarsuscripcion/${id_suscripcion}`)
+            console.log(response);
+        } catch(error) {
+        }
+    }
+
+    const desactivarSuscripcion = async (id_suscripcion) => {
+        try{
+            const response = await axios.put(`${API_URL}/desactivarsuscripcion/${id_suscripcion}`)
+            console.log(response);
+        } catch(error) {
         }
     }
 
@@ -399,7 +416,7 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, UserId}) => {
       
             console.log("Nombre:", establecimiento.direccion);
             console.log("Datos", establecimiento);
-      
+            fetchData();
             openModal();
           } else {
             console.error("No se encontraron establecimientos para el docente");
@@ -415,9 +432,9 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, UserId}) => {
           <>
             <h3>¿Está seguro que desea Eliminar este tema, se perderán todos los datos registrados?</h3>
             <button onClick={() => toast.dismiss()}>Cancelar</button>
-            <button onClick={() => {
-                    eliminarDocente(idDocente);
-                    toast.dismiss();
+            <button onClick={async () => {
+                     eliminarSuscripcion();
+                     toast.dismiss();
                 }}> 
                     Aceptar 
             </button>
@@ -457,6 +474,41 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, UserId}) => {
         const diferenciaDias = Math.floor(diferenciaMilisegundos / unDiaEnMilisegundos);
     
         return diferenciaDias;
+    }
+
+    const toggleEstadoSuscripcion = async (id_suscripcion, activo) => {
+        try {
+          if (activo) {
+            // Si la suscripción está activa, desactívala
+            await desactivarSuscripcion(id_suscripcion);
+          } else {
+            // Si la suscripción está inactiva, actívala
+            await activarSuscripcion(id_suscripcion);
+          }
+          fetchData();
+          handleSuccessMessage('Estado de suscripción cambiado exitosamente');
+        } catch (error) {
+          handleErrorMessage('Error al actualizar el estado de la suscripción', error);
+        }
+    };
+
+    const eliminarSuscripcion = async () => {
+        setIsLoading(true);
+
+        try{
+            const response = await axios.delete(`${API_URL}/eliminarsuscripcion/${idSuscripcion}`);
+            handleSuccessMessage('Suscripcion Eliminada con éxito');
+            setIsLoading(false);
+            fetchSuscripciones(idDocente);
+        } catch (error){
+            if (error.response && error.response.data && error.response.data.error) {
+                handleErrorMessage(error.response.data.error);
+            } else {
+                handleErrorMessage('Hubo un error al eliminar el Docente.');
+                console.log(error.response.data.error);
+            }
+            setIsLoading(false);
+        }
     }
     
     return (
@@ -879,16 +931,17 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, UserId}) => {
                                             </td>
                                             <td>
                                                 <button className="button1"
-                                                    onClick={async() =>{
-                                                        await cambiarEstadoActivo(suscripcion.id_docente);
-                                                        fetchData();
-                                                    }}>
+                                                    onClick={async () => {
+                                                        await toggleEstadoSuscripcion(suscripcion.id_suscripcion, suscripcion.activo);
+                                                        await fetchSuscripciones(suscripcion.id_docente);
+                                                      }}>
                                                     {suscripcion.activo ? 'Desactivar' : 'Activar'}
                                                 </button>
                                             </td>
                                             <td>
                                                 <button className="button3"
-                                                onClick={()=>{setIdSuscripcion(suscripcion.id_suscripcion);
+                                                onClick={async()=>{setIdDocente(suscripcion.id_docente);
+                                                     setIdSuscripcion(suscripcion.id_suscripcion);
                                                 notify()}}>
                                                     Eliminar
                                                 </button>

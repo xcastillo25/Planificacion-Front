@@ -176,3 +176,17 @@
   background: linear-gradient(to right, #f30e79, #f554c5);
   color: white;
 }
+
+@media screen and (max-width: 600px) {
+  .unidades-container {
+    width: 34rem;
+  }
+
+  .unidades-container .unidades-datos {
+    flex-direction: column;
+  }
+
+  .unidades-container .unidades-contenido {
+    grid-template-columns: 1fr;
+  }
+}
