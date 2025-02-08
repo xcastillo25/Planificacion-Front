@@ -59,6 +59,7 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, userId}) => {
     };
 
     const [isLoading, setIsLoading] = useState(false);
+    const [isLoading2, setIsLoading2] = useState(false);
     const fetchData = async () => {
         try {
           const response = await axios.get(`${API_URL}/usuario/${userId}`);
@@ -167,10 +168,10 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, userId}) => {
     }
 
     const cambiarPassword = async () => {
-        setIsLoading(true);
+        setIsLoading2(true);
 
         if (!validarCampos()) {
-            setIsLoading(false);
+            setIsLoading2(false);
             return;
         }
 
@@ -183,7 +184,7 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, userId}) => {
       
           console.log(response.data);
             handleSuccessMessage('Contraseña modificada con éxito.')
-            setIsLoading(false);
+            setIsLoading2(false);
             resetPassword();
             fetchData();
         } catch (error) {
@@ -192,7 +193,7 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, userId}) => {
             } else {
                 handleErrorMessage('Error', error.response.data.error);
             }
-            setIsLoading(false);
+            setIsLoading2(false);
         }
     };
     
@@ -201,8 +202,8 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, userId}) => {
             <ToastContainer />
             <div className = "header">
                 <span className="material-icons-sharp header-span title-span">person</span>
-                <h1>Datos del Usuario</h1>
-                <h1>{userId}</h1>
+                <h1>Datos del Usuario:</h1>
+                <h1>{nombres} {apellidos}</h1>
             </div>
 
             <div className="docentes-container">
@@ -309,9 +310,9 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, userId}) => {
                 </div>
                 <div className="botones">
                     <button onClick={cambiarPassword}
-                        disabled={isLoading}>
+                        disabled={isLoading2}>
                         <img src={Save} alt="null"></img>
-                        {isLoading ? "Guardando..." :"Guardar"}
+                        {isLoading2 ? "Guardando..." :"Guardar"}
                     </button>
                 </div>
                 <div>

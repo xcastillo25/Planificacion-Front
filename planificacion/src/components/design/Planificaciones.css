@@ -24,8 +24,8 @@
 
 .titulo-tema-seleccionado {
   margin-top: 0.5rem;
-  background: linear-gradient(to right, #76d1f5, #2aece3);
-  border: 2px solid black;
+  color: rgb(6, 6, 179);
+  font-weight: bold;
   padding: 1rem;
   border-radius: 8px;
   margin-top: 1rem;
@@ -120,7 +120,7 @@
 .planificacion-modal-temas {
   display: flex;
   flex-direction: column;
-  background: white;
+  background: linear-gradient(to right, #76d1f5, #2aece3);
   height: 95%;
   width: 95%;
   position: fixed;
@@ -128,7 +128,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: auto;
-  border: 1px solid black;
+  border: 5px solid white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   align-items: center;
   padding: 1rem;
@@ -138,7 +138,6 @@
 .planificacion-modal-temas .container {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to right, #76d1f5, #2aece3);
   width: 100%;
   padding: 1rem;
 }
@@ -455,7 +454,7 @@
 .planificacion-modal-detalles .container .planes div textarea {
   border: 1px solid black;
   resize: none;
-  width: 16.9rem;
+  width: 15rem;
   height: 12rem;
   padding: 3px;
 }
@@ -480,7 +479,7 @@
 .planificacion-modal-detalles .container .actividades div textarea {
   border: 1px solid black;
   resize: none;
-  width: 34.3rem;
+  width: 31rem;
   height: 12rem;
   padding: 3px;
 }
@@ -505,7 +504,7 @@
 .planificacion-modal-detalles .container .datos div input {
   border: 1px solid black;
   resize: none;
-  width: 20rem;
+  width: 18rem;
   height: 2.5rem;
   padding: 3px;
 }

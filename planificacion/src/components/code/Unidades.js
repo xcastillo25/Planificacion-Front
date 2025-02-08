@@ -526,7 +526,7 @@ const Unidades = ({plataforma, setPlataformaVisible, seccion, setMisSecciones, s
         return `${day}/${month}/${year}`;
     }
 
-    const notifyImprimir = () => {
+    const notifyImprimir = (idU) => {
         toast(
           <>
             <h3>¿Desea Imprimir la Planificación de esta unidad en formato PDF?</h3>
@@ -646,14 +646,13 @@ const Unidades = ({plataforma, setPlataformaVisible, seccion, setMisSecciones, s
                                     {!botonesVisibles && (
                                         <>
                                             {!unidadSeleccionada || unidadSeleccionada.id_unidad === unidad.id_unidad ? (
-                                                <button className = "unidades-boton3"
+                                                <button
+                                                className="unidades-boton3"
                                                 type="button"
-                                                onClick={async () => {
-                                                    await setIdUnidad(unidad.id_unidad);
-                                                    notifyImprimir();
-                                                }}>
-                                                    Imprimir
-                                                </button>
+                                                onClick={() => notifyImprimir(unidad.id_unidad)}>
+                                                Imprimir
+                                              </button>
+                                              
                                             ): null}
                                             </>
                                      )}

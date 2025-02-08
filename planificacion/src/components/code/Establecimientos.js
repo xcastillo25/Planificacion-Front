@@ -315,7 +315,7 @@ const Establecimientos = ({plataforma, setPlataformaVisible, userId}) => {
             <div className = "establecimiento-container">
                 <div className = "container-datos">
                     <div className="column1">
-                        <div>
+                        <div >
                             <h2>Establecimiento:</h2>
                             <input type="text" placeholder="Ingresa el nombre del Establecimiento"
                                 value={establecimiento}

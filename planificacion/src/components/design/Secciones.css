@@ -23,7 +23,7 @@
 }
 
 .secciones-container .secciones-titulo div select {
-  width: 7rem;
+  width: 8rem;
   height: 2.3rem;
   border-radius: 6px;
   margin: 7px;
@@ -42,7 +42,7 @@
   font-weight: lighter;
   font-size: 14px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.63);
-  width: 7rem;
+  width: 8rem;
   height: 2.5rem;
   border-radius: 5px;
   cursor: pointer;

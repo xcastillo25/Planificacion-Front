@@ -278,6 +278,37 @@ const Login = () => {
         }
     };
     
+    const recuperarContraseña = async () => {
+        setIsLoading(true);
+      
+        if (!correoRecuperacion) {
+          handleErrorMessage("Por favor, ingresa tu correo.");
+          setIsLoading(false);
+          return;
+        }
+      
+        try {
+          const response = await axios.post(`${API_URL}/usuarioresetPassword`, { correo: correoRecuperacion });
+      
+          if (response.status === 200) {
+            handleSuccessMessage(response.data.message || "Tu nueva contraseña ha sido enviada a tu correo.");
+            setCorreoRecuperacion("");
+            closeRecuperacionModal();
+          }
+        } catch (error) {
+          if (error.response && error.response.data && error.response.data.error) {
+            // Mostrar el mensaje de error que viene del backend
+            handleErrorMessage(error.response.data.error);
+          } else {
+            // Mostrar un mensaje genérico si no hay respuesta del backend
+            handleErrorMessage("Hubo un error al procesar tu solicitud.");
+          }
+        } finally {
+          setIsLoading(false);
+        }
+      };
+            
+
     return (
         <>
         <section className="Login" id="Login">
@@ -425,38 +456,29 @@ const Login = () => {
                 </div>
             </div>
         </Modal>
-        <Modal isOpen={isOpenRecuperacionModal} onRequestClose={closeRecuperacionModal} className="recuperacion-modal-suscripcion">
-            <h1 style={{fontSize:'30px'}}>Recuperación de Contraseña</h1>
+        <Modal
+            isOpen={isOpenRecuperacionModal}
+            onRequestClose={closeRecuperacionModal}
+            className="recuperacion-modal-suscripcion"
+            >
+            <h1 style={{ fontSize: "30px" }}>Recuperación de Contraseña</h1>
             <div className="container">
-                <h2>Escribe tu correo electrónico de administrador:</h2>
-                <input type="email"
+                <h2>Escribe tu correo electrónico:</h2>
+                <input
+                type="email"
                 value={correoRecuperacion}
                 onChange={(e) => setCorreoRecuperacion(e.target.value)}
-                placeholder="Ingresa tu correo electrónico registrado">
-                </input>
-                <button 
-                onClick={enviarCodigoAEmail}
-                disabled={isLoading}>
-                    <img src={Send} alt="null"></img>
-                    {isLoading ? 'Enviando...' : 'Enviar Código'}
-                </button>
-                <h2>Código de Verificación:</h2>
-                <input type="texto"
-                    value={codigoRecuperacion}
-                    onChange={(e) => setCodigoRecuperacion(e.target.value)}
-                    placeholder="Ingresa tu correo electrónico registrado">
-                </input>
+                placeholder="Ingresa tu correo electrónico registrado"
+                />
                 <div className="botones">
-                    <button
-                    onClick={validarYRegistrar}
-                    disabled={isLoading}>
-                        <img src={Pass} alt="null"></img>
-                        {isLoading ? 'Recuperando...' : 'Recuperar'}
-                    </button>
-                    <button onClick={closeRecuperacionModal}>
-                        <img src={Cancel} alt="null"></img>
-                        Cancelar
-                    </button>
+                <button onClick={recuperarContraseña} disabled={isLoading}>
+                    <img src={Pass} alt="null" />
+                    {isLoading ? "Enviando..." : "Recuperar"}
+                </button>
+                <button onClick={closeRecuperacionModal}>
+                    <img src={Cancel} alt="null" />
+                    Cancelar
+                </button>
                 </div>
             </div>
         </Modal>
