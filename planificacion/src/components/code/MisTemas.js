@@ -62,6 +62,7 @@ const MisTemas = ({
   const [contenidoCompetencia, setContenidoCompetencia] = useState('');
   const [contenidoIndicador, setContenidoIndicador] = useState('');
   const [contenidoContenido, setContenidoContenido] = useState('');
+  const [criterioBusqueda, setCriterioBusqueda] = useState('numcontenidos'); // Estado para el criterio de búsqueda
 
   //------------------------------------------
   // ESTADOS de formulario - Temas
@@ -200,7 +201,7 @@ const MisTemas = ({
           endpoint = `${API_URL}/misTemasSexto/${idArea}/${userId}`;
           break;
         default:
-          console.warn('Grado no reconocido:', grado);
+          // console.warn('Grado no reconocido:', grado);
           return;
       }
       // Descarga TODOS los misTemas (sin filtrar)
@@ -243,7 +244,7 @@ const MisTemas = ({
           endpoint = `${API_URL}/temasSexto/${idArea}`;
           break;
         default:
-          console.warn('Grado no reconocido:', grado);
+          // console.warn('Grado no reconocido:', grado);
           return;
       }
       // Descarga TODOS los temas (sin filtrar)
@@ -284,7 +285,7 @@ const MisTemas = ({
           endpoint = `${API_URL}/contenidosSexto/${idArea}`;
           break;
         default:
-          console.warn('Grado no reconocido:', grado);
+          // console.warn('Grado no reconocido:', grado);
           return;
       }
       // Descarga TODOS los contenidos (sin filtrar)
@@ -317,16 +318,27 @@ const MisTemas = ({
   //------------------------------------------
   useEffect(() => {
     if (!buscarContenido) {
-      // Si no hay texto, mostramos todos
       setContenidosFiltrados(contenidosData);
     } else {
-      const filtrados = contenidosData.filter((c) =>
-        c.numcontenidos.toLowerCase().includes(buscarContenido.toLowerCase())
-      );
+      const filtrados = contenidosData.filter((c) => {
+        switch (criterioBusqueda) {
+          case 'numcontenidos':
+            return c.numcontenidos.toLowerCase().includes(buscarContenido.toLowerCase());
+          case 'competencia':
+            return c.competencia.toLowerCase().includes(buscarContenido.toLowerCase());
+          case 'indicador':
+            return c.indicador.toLowerCase().includes(buscarContenido.toLowerCase());
+          case 'contenido':
+            return c.contenido.toLowerCase().includes(buscarContenido.toLowerCase());
+          default:
+            return false;
+        }
+      });
       setContenidosFiltrados(filtrados);
     }
-    setCurrentPage(1); // Reiniciar a la página 1
-  }, [buscarContenido, contenidosData]);
+    setCurrentPage(1);
+  }, [buscarContenido, criterioBusqueda, contenidosData]);
+  
 
   // Filtrado local para TEMAS
   useEffect(() => {
@@ -604,7 +616,7 @@ const MisTemas = ({
           endpoint = `${API_URL}/misTemasSexto`;
           break;
         default:
-          console.warn('Grado no reconocido:', grado);
+          // console.warn('Grado no reconocido:', grado);
           return;
       }
 
@@ -676,7 +688,7 @@ const MisTemas = ({
           endpoint = `${API_URL}/misTemasSexto/${misTemasIdTema}`;
           break;
         default:
-          console.warn('Grado no reconocido:', grado);
+          // console.warn('Grado no reconocido:', grado);
           return;
       }
 
@@ -748,7 +760,7 @@ const MisTemas = ({
           endpoint = `${API_URL}/misTemasSexto/${misTemasIdTema}`;
           break;
         default:
-          console.warn('Grado no reconocido:', grado);
+          // console.warn('Grado no reconocido:', grado);
           return;
       }
 
@@ -1155,15 +1167,20 @@ const MisTemas = ({
           </div>
           <div>
             <h1>Currículum Nacional Base</h1>
+            
             <div className="busqueda">
-              <label>Buscar:</label>
-              <select>
-                <option>Número de Contenido</option>
+              <label>Buscar por:</label>
+              <select onChange={(e) => setCriterioBusqueda(e.target.value)}>
+                <option value="numcontenidos">Número de Contenido</option>
+                <option value="competencia">Competencia</option>
+                <option value="indicador">Indicador</option>
+                <option value="contenido">Contenido</option>
               </select>
               <input
+                type="text"
                 onChange={(e) => setBuscarContenido(e.target.value)}
                 value={buscarContenido}
-                placeholder="Ingresa el contenido a buscar..."
+                placeholder="Ingresa tu búsqueda..."
               />
             </div>
             <div className="tabla">

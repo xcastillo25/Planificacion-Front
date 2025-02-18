@@ -33,7 +33,7 @@ const AdminUsuarios = ({plataforma, setPlataformaVisible}) => {
             setCurrentPage(1);
             setUsuariosFiltrados(filteredDataUsuarios);
         } catch (error){
-            console.log(error);
+            // console.log(error);
         }
     }
 
@@ -137,7 +137,7 @@ const AdminUsuarios = ({plataforma, setPlataformaVisible}) => {
     const cambiarEstadoActivo = async (id) => {
         try{
             const response = await axios.put(`${API_URL}/estado-usuario/${id}`)
-            console.log(response);
+            // console.log(response);
             handleSuccessMessage('Estado cambiado exitosamente');
         } catch(error) {
             handleErrorMessage('Error al actualizar el estado del usuario', error);
@@ -169,7 +169,7 @@ const AdminUsuarios = ({plataforma, setPlataformaVisible}) => {
                 handleErrorMessage(error.response.data.error);
             } else {
                 handleErrorMessage('Hubo un error al eliminar el Usuario.');
-                console.log(error.response.data.error);
+                // console.log(error.response.data.error);
             }
             setIsLoading(false);
         }

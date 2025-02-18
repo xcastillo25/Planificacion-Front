@@ -65,7 +65,7 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, userId}) => {
           const response = await axios.get(`${API_URL}/usuario/${userId}`);
           const userData = response.data;
     
-          console.log("Mi Data:", userData);
+          //console.log("Mi Data:", userData);
     
           if (Array.isArray(userData.usuario) && userData.usuario.length > 0) {
             const usuarioData = userData.usuario[0];
@@ -77,10 +77,10 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, userId}) => {
             setRol(usuarioData.rol);
             resetPassword();
           } else {
-            console.error("Error: No se encontró ningún usuario en la respuesta.");
+            // console.error("Error: No se encontró ningún usuario en la respuesta.");
           }
         } catch (error) {
-          console.log(error);
+        //   console.log(error);
         }
     };
 
@@ -101,7 +101,7 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, userId}) => {
                 telefono: telefono,
             });
 
-            console.log(response);
+            // console.log(response);
             handleSuccessMessage('Usuario modificado con éxito.')
             setIsLoading(false);
             resetPassword();
@@ -182,7 +182,7 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, userId}) => {
             nuevoPassword: passwordNueva,
           });
       
-          console.log(response.data);
+        //   console.log(response.data);
             handleSuccessMessage('Contraseña modificada con éxito.')
             setIsLoading2(false);
             resetPassword();

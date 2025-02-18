@@ -82,7 +82,7 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, UserId}) => {
             setCurrentPage(1);
             setDatosFiltrados(filteredData);
         } catch (error){
-            console.log(error);
+            // console.log(error);
         }
     }
 
@@ -94,7 +94,7 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, UserId}) => {
            
             setSuscripcionData(data);
         } catch (error){
-            console.log(error);
+            // console.log(error);
         }
     }
 
@@ -198,7 +198,7 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, UserId}) => {
     const cambiarEstadoActivo = async (id) => {
         try{
             const response = await axios.put(`${API_URL}/estado-docente/${id}`)
-            console.log(response);
+            // console.log(response);
             handleSuccessMessage('Estado cambiado exitosamente');
             fetchData();
         } catch(error) {
@@ -209,7 +209,7 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, UserId}) => {
     const activarSuscripcion = async (id_suscripcion) => {
         try{
             const response = await axios.put(`${API_URL}/activarsuscripcion/${id_suscripcion}`)
-            console.log(response);
+            // console.log(response);
         } catch(error) {
         }
     }
@@ -217,7 +217,7 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, UserId}) => {
     const desactivarSuscripcion = async (id_suscripcion) => {
         try{
             const response = await axios.put(`${API_URL}/desactivarsuscripcion/${id_suscripcion}`)
-            console.log(response);
+            // console.log(response);
         } catch(error) {
         }
     }
@@ -314,7 +314,7 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, UserId}) => {
                 licencia: licencia
             });
 
-            console.log(response);
+            // console.log(response);
             handleSuccessMessage('Docente modificado con éxito.')
             setIsLoading(false);
             resetFormDocente();
@@ -349,7 +349,7 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, UserId}) => {
                 handleErrorMessage(error.response.data.error);
             } else {
                 handleErrorMessage('Hubo un error al eliminar el Docente.');
-                console.log(error.response.data.error);
+                // console.log(error.response.data.error);
             }
             setIsLoading(false);
         }
@@ -414,15 +414,15 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, UserId}) => {
             setIdDocente(establecimiento.id_docente);
             setFoto(establecimiento.logotipo);
       
-            console.log("Nombre:", establecimiento.direccion);
-            console.log("Datos", establecimiento);
+            // console.log("Nombre:", establecimiento.direccion);
+            // console.log("Datos", establecimiento);
             fetchData();
             openModal();
           } else {
-            console.error("No se encontraron establecimientos para el docente");
+            // console.error("No se encontraron establecimientos para el docente");
           }
         } catch (error) {
-          console.error("Error al obtener datos del establecimiento", error);
+        //   console.error("Error al obtener datos del establecimiento", error);
         }
       };
       
@@ -505,7 +505,7 @@ const AdminDocentes = ({plataforma, setPlataformaVisible, UserId}) => {
                 handleErrorMessage(error.response.data.error);
             } else {
                 handleErrorMessage('Hubo un error al eliminar el Docente.');
-                console.log(error.response.data.error);
+                // console.log(error.response.data.error);
             }
             setIsLoading(false);
         }

@@ -19,9 +19,9 @@ const MisSecciones =({plataforma, setPlataformaVisible, userId, setMisSecciones}
         try {
             const response = await axios.get(`${API_URL}/misgrados/${userId}`);
             setUserGrados(response.data);
-            console.log("Grados", response.data);
+            // console.log("Grados", response.data);
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
     }
 

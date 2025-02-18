@@ -137,7 +137,7 @@ const Login = () => {
                 rol: rol,
                 telefono: telefono,
             });
-            console.log(response);
+            // console.log(response);
             handleSuccessMessage('Usuario registrado con éxito.');
             setIsLoading(false);
             resetRegistro();
@@ -232,18 +232,18 @@ const Login = () => {
         } catch (error) {
           if (error.response) {
             // El servidor respondió con un estado fuera del rango de 2xx
-            console.log(error.response.data);
+            // console.log(error.response.data);
             handleErrorMessage(error.response.data.error);
           } else if (error.request) {
             // La solicitud se hizo pero no se recibió ninguna respuesta
-            console.log(error.request);
+            // console.log(error.request);
             handleErrorMessage('No se recibió respuesta del servidor.');
           } else {
             // Algo sucedió en la configuración de la solicitud
-            console.log('Error', error.message);
+            // console.log('Error', error.message);
             handleErrorMessage('Ocurrió un error al hacer la solicitud.');
           }
-          console.log(error.config);
+        //   console.log(error.config);
         }
          finally {
           setIsLoading(false);

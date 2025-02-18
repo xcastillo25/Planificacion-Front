@@ -107,9 +107,9 @@ const Dashboard = () => {
         try {
             const response = await axios.get(`${API_URL}/suscripcion/${id}`);
             setUserData(response.data);
-            console.log('Datos de la prueba:', response.data);
+            // console.log('Datos de la prueba:', response.data);
         } catch (error) {
-            console.error('Error al obtener datos de prueba:', error);
+            // console.error('Error al obtener datos de prueba:', error);
         }
     };
 

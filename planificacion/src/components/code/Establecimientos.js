@@ -111,10 +111,10 @@ const Establecimientos = ({plataforma, setPlataformaVisible, userId}) => {
             return false;
         }
 
-        if (!previewImage || previewImage.trim() === '') {
-            handleErrorMessage(`Debes cargar una foto antes de guardar.`);
-            return false;
-        }
+        // if (!previewImage || previewImage.trim() === '') {
+        //     handleErrorMessage(`Debes cargar una foto antes de guardar.`);
+        //     return false;
+        // }
 
         const codigoRegex = /^\d{10}$/;
         if (!codigoRegex.test(codigo)) {
@@ -135,9 +135,9 @@ const Establecimientos = ({plataforma, setPlataformaVisible, userId}) => {
         try {
           const response = await axios.get(`${API_URL}/establecimientos/${userId}`);
           setUserData(response.data);
-          console.log("Datos", response.data);
+        //   console.log("Datos", response.data);
         } catch (error) {
-          console.log(error);
+        //   console.log(error);
         }
     };
 
@@ -159,11 +159,12 @@ const Establecimientos = ({plataforma, setPlataformaVisible, userId}) => {
                 setIsLoading(false);
                 return;
             }
-        } else {
-            handleErrorMessage('Por favor, carga un logotipo antes de guardar.');
-            setIsLoading(false);
-            return;
-        }
+        } 
+        // else {
+        //     handleErrorMessage('Por favor, carga un logotipo antes de guardar.');
+        //     setIsLoading(false);
+        //     return;
+        // }
 
         try {
             const response = await axios.post(`${API_URL}/establecimiento`, {
@@ -182,7 +183,7 @@ const Establecimientos = ({plataforma, setPlataformaVisible, userId}) => {
                 id_docente: userId,
                 logotipo: photoPath
             });
-            console.log(response);
+            // console.log(response);
             handleSuccessMessage('Establecimiento registrado con éxito.');
             setIsLoading(false);
             fetchData();
@@ -243,7 +244,7 @@ const Establecimientos = ({plataforma, setPlataformaVisible, userId}) => {
                 logotipo: photoPath
             });
 
-            console.log(response);
+            // console.log(response);
             handleSuccessMessage('Establecimiento modificado con éxito.')
             setIsLoading(false);
             resetForm();

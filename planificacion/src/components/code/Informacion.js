@@ -18,9 +18,9 @@ const Informacion = ({plataforma, setPlataformaVisible, userId}) =>{
         try {
             const response = await axios.get(`${API_URL}/informacion/${userId}`);
             setUserData(response.data);
-            console.log("Datos", response.data);
+            // console.log("Datos", response.data);
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
     }
 
@@ -28,9 +28,9 @@ const Informacion = ({plataforma, setPlataformaVisible, userId}) =>{
         try {
             const response = await axios.get(`${API_URL}/misgrados/${userId}`);
             setUserGrados(response.data);
-            console.log("Grados", response.data);
+            // console.log("Grados", response.data);
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
     }
 

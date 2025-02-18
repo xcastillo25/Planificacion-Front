@@ -42,9 +42,9 @@ const Grados = ({ plataforma, setPlataformaVisible, userId, setCicloEscolar }) =
     try {
       const response = await axios.get(`${API_URL}/ciclos/${userId}`);
       setUserData(response.data);
-      console.log('Datos', response.data);
+      // console.log('Datos', response.data);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -72,7 +72,7 @@ const Grados = ({ plataforma, setPlataformaVisible, userId, setCicloEscolar }) =
         ciclo,
         id_docente: userId,
       });
-      console.log(response);
+      // console.log(response);
       handleSuccessMessage('Ciclo registrado con éxito.');
       setIsLoadingAdd(false);
       fetchData();
@@ -102,7 +102,7 @@ const Grados = ({ plataforma, setPlataformaVisible, userId, setCicloEscolar }) =
         ciclo,
         id_docente: userId,
       });
-      console.log(response);
+      // console.log(response);
       handleSuccessMessage('Ciclo modificado con éxito');
       setIsLoadingAdd(false);
       fetchData();
@@ -123,7 +123,7 @@ const Grados = ({ plataforma, setPlataformaVisible, userId, setCicloEscolar }) =
       handleSuccessMessage('Visibilidad del ciclo escolar modificada con éxito');
       setIsLoadingChange(false);
       fetchData();
-      console.log(response);
+      // console.log(response);
     } catch (error) {
       if (error.response?.data?.error) {
         handleErrorMessage(error.response.data.error);
@@ -147,7 +147,7 @@ const Grados = ({ plataforma, setPlataformaVisible, userId, setCicloEscolar }) =
         handleErrorMessage(error.response.data.error);
       } else {
         handleErrorMessage('Hubo un error al eliminar el ciclo.');
-        console.log(error.response?.data?.error);
+        // console.log(error.response?.data?.error);
       }
       setIsLoadingDelete(false);
     }

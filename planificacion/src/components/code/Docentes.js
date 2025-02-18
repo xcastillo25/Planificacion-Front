@@ -67,7 +67,7 @@ const Docentes = ({plataforma, setPlataformaVisible, userId}) => {
           const response = await axios.get(`${API_URL}/docente/${userId}`);
           const userData = response.data;
     
-          console.log("Mi Data:", userData);
+        //   console.log("Mi Data:", userData);
     
           if (Array.isArray(userData.docente) && userData.docente.length > 0) {
             const docenteData = userData.docente[0];
@@ -83,10 +83,10 @@ const Docentes = ({plataforma, setPlataformaVisible, userId}) => {
             setDirector(docenteData.director);
             resetPassword();
           } else {
-            console.error("Error: No se encontró ningún docente en la respuesta.");
+            // console.error("Error: No se encontró ningún docente en la respuesta.");
           }
         } catch (error) {
-          console.log(error);
+        //   console.log(error);
         }
     };
 
@@ -113,7 +113,7 @@ const Docentes = ({plataforma, setPlataformaVisible, userId}) => {
                 director: director,
             });
 
-            console.log(response);
+            // console.log(response);
             handleSuccessMessage('Docente modificado con éxito.')
             setIsLoading2(false);
             resetPassword();
@@ -196,7 +196,7 @@ const Docentes = ({plataforma, setPlataformaVisible, userId}) => {
             nuevoPassword: passwordNueva,
           });
       
-          console.log(response.data);
+        //   console.log(response.data);
             handleSuccessMessage('Contraseña modificada con éxito.')
             setIsLoading(false);
             resetPassword();

@@ -74,9 +74,9 @@ const Secciones = ({ plataforma, setPlataformaVisible, userId, ciclo }) => {
     try {
       const response = await axios.get(`${API_URL}/grados`);
       setGrados(response.data.grados);
-      console.log('Grados', response.data);
+      // console.log('Grados', response.data);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -84,10 +84,10 @@ const Secciones = ({ plataforma, setPlataformaVisible, userId, ciclo }) => {
     try {
       const response = await axios.get(`${API_URL}/secciones/${idDocente}/${idCiclo}`);
       setUserData(response.data);
-      console.log('Datos', response.data);
+      // console.log('Datos', response.data);
       setSeccionesCreadas(response.data.seccionDocente.length);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -123,7 +123,7 @@ const Secciones = ({ plataforma, setPlataformaVisible, userId, ciclo }) => {
         id_grado: idGrado,
         id_ciclo: idCiclo,
       });
-      console.log(response);
+      // console.log(response);
       handleSuccessMessage('Sección registrada con éxito');
       setIsLoadingAdd(false);
       fetchData();
@@ -159,7 +159,7 @@ const Secciones = ({ plataforma, setPlataformaVisible, userId, ciclo }) => {
         id_grado: idGrado,
         id_ciclo: idCiclo,
       });
-      console.log(response);
+      // console.log(response);
       handleSuccessMessage('Sección modificada con éxito');
       setIsLoadingAdd(false);
       fetchData();
@@ -178,7 +178,7 @@ const Secciones = ({ plataforma, setPlataformaVisible, userId, ciclo }) => {
     setIsLoadingDelete(true);
     try {
       const response = await axios.delete(`${API_URL}/seccion/${id}`);
-      console.log(response);
+      // console.log(response);
       setIsLoadingDelete(false);
       fetchData();
       handleSuccessMessage('Sección eliminada con éxito.');
@@ -188,7 +188,7 @@ const Secciones = ({ plataforma, setPlataformaVisible, userId, ciclo }) => {
         handleErrorMessage(error.response.data.error);
       } else {
         handleErrorMessage('Hubo un error al eliminar la sección.');
-        console.log(error.response?.data?.error);
+        // console.log(error.response?.data?.error);
       }
       setIsLoadingDelete(false);
     }

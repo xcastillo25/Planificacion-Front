@@ -68,6 +68,11 @@ const Login = () => {
     const openRecuperacionModal = () => setIsOpenRecuperacionModal(true);
     const closeRecuperacionModal = () => setIsOpenRecuperacionModal(false);
 
+    const [isOpenTerminosModal, setIsOpenTerminosModal] = useState(false);
+
+    const openTerminosModal = () => setIsOpenTerminosModal(true);
+    const closeTerminosModal = () => setIsOpenTerminosModal(false);
+
     const [isEntring, setIsEntring] = useState(false);
     const handleSubmit = async (e) => {
         setIsEntring(true);
@@ -172,7 +177,7 @@ const Login = () => {
                 genero: genero,
                 director: director
             });
-            console.log(response);
+            // console.log(response);
             handleSuccessMessage('Docente registrado con éxito.');
             setIsLoading(false);
             resetRegistro();
@@ -202,7 +207,7 @@ const Login = () => {
                 tipo_pago: tipoPago,
                 boleta_pago: boletaPago,
             });
-            console.log(response);
+            // console.log(response);
             handleSuccessMessage('Suscripción solicitada con éxito.');
             setIsLoading(false);
             resetSuscripcion();
@@ -334,18 +339,18 @@ const Login = () => {
         } catch (error) {
           if (error.response) {
             // El servidor respondió con un estado fuera del rango de 2xx
-            console.log(error.response.data);
+            // console.log(error.response.data);
             handleErrorMessage(error.response.data.error);
           } else if (error.request) {
             // La solicitud se hizo pero no se recibió ninguna respuesta
-            console.log(error.request);
+            // console.log(error.request);
             handleErrorMessage('No se recibió respuesta del servidor.');
           } else {
             // Algo sucedió en la configuración de la solicitud
-            console.log('Error', error.message);
+            // console.log('Error', error.message);
             handleErrorMessage('Ocurrió un error al hacer la solicitud.');
           }
-          console.log(error.config);
+        //   console.log(error.config);
         }
          finally {
           setIsLoading(false);
@@ -411,7 +416,10 @@ const Login = () => {
         }
       };
       
-      
+    const enviarYoutube = () => {
+        window.open("https://www.youtube.com/watch?v=HIKmOeiYtCU", "_blank");
+    };
+
     const enviarWhatsapp = () => {
         const numeroWhatsapp = '+50249643635'; // Reemplaza con el número deseado
         const mensaje = 'Hola, ¿Puedes darme información sobre el Sistema de Planificación Escolar?';
@@ -433,6 +441,7 @@ const Login = () => {
                     <label>Correo:</label>
                     <input 
                         placeholder="Ingresa tu correo"
+                        type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         ></input>
@@ -466,10 +475,10 @@ const Login = () => {
                         <img src={Suscribe} alt="null"></img>
                         Suscríbete
                     </button>
-                    <div className="youtube-button" title="Guía Rápida de Inicio" onClick={enviarWhatsapp}>
+                    <div className="youtube-button" title="Guía Rápida de Inicio" onClick={enviarYoutube}>
                         <FaYoutube />
                     </div>
-                    <div className="book-button" title="Guía Rápida de Inicio" onClick={enviarWhatsapp}>
+                    <div className="book-button" title="Guía Rápida de Inicio">
                         <FaBook />
                     </div>
                     <div className="whatsapp-button" title="Conversemos por whatsapp" onClick={enviarWhatsapp}>
@@ -612,7 +621,8 @@ const Login = () => {
                     onChange={() => setAceptoTerminos(!aceptoTerminos)}
                     />
                     <label>Acepto los</label>
-                    <a href="#enlaceTerminosCondiciones">Términos y Condiciones</a>
+                    <a href="#enlaceTerminosCondiciones" onClick={openTerminosModal}>
+                        Términos y Condiciones</a>
                     <label>del servicio.</label>
                 </div>
                 <div className="botones">
@@ -728,6 +738,158 @@ const Login = () => {
                 </div>
             </div>
         </Modal>
+        <Modal
+            isOpen={isOpenTerminosModal}
+            onRequestClose={closeTerminosModal}
+            className="login-modal-terminos"
+            >
+            <h1>Términos y Condiciones de Uso</h1>
+            <p><strong>Fecha de entrada en vigor:</strong> Febrero de 2025.</p>
+            
+            <h2>1. Información General</h2>
+            <p>
+            Bienvenido a www.planificacionescolar.com, una herramienta diseñada para docentes 
+            que permite la elaboración de planificaciones escolares basadas en el 
+            Currículum Nacional Base de Guatemala. Este servicio es proporcionado por 
+            TonyGames, con sede en Guatemala. Al acceder y utilizar esta plataforma, el 
+            usuario acepta los presentes términos y condiciones.
+            </p>
+            
+            <h2>2. Suscripción y Pagos</h2>
+
+            <p>-La suscripción anual tiene un costo de Q.250.00.</p>
+            <p>-Solo se ofrece una suscripción anual en la actualidad.</p>
+            <p>-La renovación de la suscripción debe realizarse manualmente.</p>
+            <p>-Se ofrece un mes de prueba gratuito para nuevos usuarios.</p>
+            <p>-Métodos de pago aceptados: transferencia bancaria, depósito y efectivo.</p>
+            <p>-No se ofrecen reembolsos bajo ninguna circunstancia.</p>
+            <p>
+            -Los precios pueden cambiar en futuras renovaciones, notificándose 
+            previamente a los usuarios.
+                </p>
+       
+            <h2>3. Uso de la Plataforma</h2>
+         
+                <p>
+                Aunque la plataforma está diseñada para docentes, puede ser utilizada por 
+                otras personas con fines educativos.
+                </p>
+                <p>
+                La funcionalidad principal es la creación de planificaciones educativas 
+                en formato PDF.
+                </p>
+                <p>
+                Los usuarios pueden compartir sus contenidos con otros dentro de la 
+                plataforma, pero cada usuario es responsable de sus creaciones.
+                </p>
+                <p>
+                Los documentos generados en PDF pertenecen al usuario, pero las 
+                planificaciones almacenadas en la base de datos pueden ser utilizadas como 
+                sugerencias para otros.
+                </p>
+                <p>Se permite la descarga e impresión de los contenidos generados.</p>
+                <p>
+                La suscripción permite su uso en un solo establecimiento educativo, aunque 
+                el docente puede gestionar varios grados y secciones.
+                </p>
+  
+            
+            <h2>4. Responsabilidades y Garantías</h2>
+            
+                <p>
+                Se garantiza el acceso continuo a la plataforma, salvo interrupciones por 
+                mantenimiento o fallos del proveedor de hosting (smarterasp.net).
+                </p>
+                <p>
+                No se ofrecen compensaciones por caídas del sistema, pero se proporcionará 
+                soporte técnico en caso de problemas.
+                </p>
+                <p>
+                Se prohíbe compartir credenciales o realizar un uso fraudulento de la 
+                plataforma. En caso de incumplimiento, la cuenta será cancelada sin 
+                derecho a reembolso ni recuperación de material almacenado.
+                </p>
+            
+            <h2>5. Propiedad Intelectual</h2>
+            
+                <p>
+                El contenido generado por los usuarios en formato PDF les pertenece, 
+                pero la plataforma puede utilizar las planificaciones almacenadas en su 
+                base de datos como referencia.
+                </p>
+                <p>
+                El código, diseño y estructura de la plataforma son propiedad de 
+                TonyGames y están protegidos por derechos de autor.
+                </p>
+                <p>No se permite la reproducción ni venta del material generado.</p>
+                <p>Los docentes no pueden compartir el contenido fuera de la plataforma.</p>
+            
+            
+            <h2>6. Privacidad y Protección de Datos</h2>
+            
+                <p>
+                Se recopilan datos personales no sensibles, como nombre, apellidos, 
+                teléfono y correo electrónico, y datos laborales como nombre del 
+                establecimiento y dirección.
+                </p>
+                <p>No se solicitan datos bancarios ni información de menores de edad.</p>
+                <p>
+                Los datos se almacenan en smarterasp.net bajo sus estándares de seguridad.
+                </p>
+                <p>No se comparte información con terceros.</p>
+                <p>Los usuarios pueden solicitar la eliminación de sus datos y cuenta en cualquier momento.</p>
+            
+            
+            <h2>7. Restricciones y Sanciones</h2>
+            
+                <p>
+                Está prohibido el uso indebido de la plataforma, como spam, intentos de 
+                hacking o compartir credenciales.
+                </p>
+                <p>
+                Si un usuario infringe las reglas, su cuenta puede ser eliminada de forma 
+                permanente sin derecho a reembolso.
+                </p>
+                <p>
+                En caso de suspensión de cuenta, el usuario deberá resolver la situación 
+                para recuperar el acceso.
+                </p>
+            
+            <h2>8. Modificaciones a los Términos y Condiciones</h2>
+            
+                <p>
+                Cualquier cambio en estos términos será notificado a los usuarios 
+                mediante correo electrónico.
+                </p>
+                <p>No se requiere aceptar nuevamente los términos para continuar utilizando la plataforma.</p>
+            
+            
+            <p>
+                Para cualquier duda o consulta, contáctenos al correo: <strong>tonygames25000@gmail.com</strong> y/o al 
+                Whatsapp: <strong>49643635</strong>.<br />
+            </p>
+            <p>
+            <strong>TonyGames</strong>
+            </p>
+            <p><strong>www.planificacionescolar.com</strong>
+            </p>
+
+            <button 
+                style={{ 
+                margin: "1rem", 
+                padding: "0.5rem 1rem", 
+                fontSize: "16px", 
+                cursor: "pointer",
+                background: "linear-gradient(to right, #3fe715, #befa79)",
+                border: "1px solid black",
+                borderRadius: "6px"
+                }}
+                onClick={closeTerminosModal}
+            >
+                Cerrar
+            </button>
+            </Modal>
+
         </>
     );
 };

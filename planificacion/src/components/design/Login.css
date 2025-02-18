@@ -10,6 +10,33 @@
   overflow: hidden; /* Evita scroll si no es necesario */
 }
 
+.login-modal-terminos {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  height: 75%;
+  width: 75%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+  border: 1px solid black;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  padding: 2rem;
+  border-radius: 8px;
+  background: linear-gradient(to right, #f5f5f5, #f3f3f3);
+  gap: 1rem;
+}
+
+.login-modal-terminos p {
+  font-size: 14px;
+  color: black;
+  text-align: center;
+}
+
+
 
 .login-container {
   width: 90%; /* Usa el 90% del ancho disponible */

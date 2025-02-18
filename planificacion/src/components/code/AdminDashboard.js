@@ -88,7 +88,7 @@ const Dashboard = () => {
             const response = await axios.get(`${API_URL}/calcularFechaExpiracion/${id}`);
             setUserData = response.data;
             
-            console.log('Datos de prueba:', userData);
+            // console.log('Datos de prueba:', userData);
             
             // O asignarlos a variables si es necesario
             const { fechaExpiracion, diasRestantes } = userData;
@@ -97,7 +97,7 @@ const Dashboard = () => {
             setRestantes(diasRestantes);
             
         } catch (error) {
-            console.error('Error al obtener datos de prueba:', error);
+            // console.error('Error al obtener datos de prueba:', error);
         }
     };
     

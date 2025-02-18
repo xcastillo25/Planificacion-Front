@@ -111,7 +111,7 @@ const AdminTemas=({plataforma, setPlataformaVisible, area, idArea, idGrado, isOp
     const fetchTemas = async () => {
         try {
             const migrado = idGrado;
-            console.log("Grado=", migrado);
+            // console.log("Grado=", migrado);
     
             let endpoint;
             let findpoint;
@@ -165,7 +165,7 @@ const AdminTemas=({plataforma, setPlataformaVisible, area, idArea, idGrado, isOp
             setCurrentPageTemas(1); // Regresa a la primera página después de cada búsqueda
             setTemasFiltrados(filteredDataTemas); 
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
     };
     
@@ -176,7 +176,7 @@ const AdminTemas=({plataforma, setPlataformaVisible, area, idArea, idGrado, isOp
     const fetchContenidos = async () => {
         try {
             const migrado = idGrado;
-            console.log("Grado=", migrado);
+            // console.log("Grado=", migrado);
     
             let endpoint;
             let findpoint;
@@ -201,7 +201,7 @@ const AdminTemas=({plataforma, setPlataformaVisible, area, idArea, idGrado, isOp
                     endpoint = `${API_URL}/contenidosSexto/${idArea}`;
                     break; 
                 default:
-                    console.warn("Grado no reconocido:", migrado);
+                    // console.warn("Grado no reconocido:", migrado);
                     return;
             }
     
@@ -217,7 +217,7 @@ const AdminTemas=({plataforma, setPlataformaVisible, area, idArea, idGrado, isOp
             setCurrentPage(1); // Regresa a la primera página después de cada búsqueda
             setContenidosFiltrados(filteredData); 
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
     };
     
@@ -473,7 +473,7 @@ const AdminTemas=({plataforma, setPlataformaVisible, area, idArea, idGrado, isOp
         if (pdf) {
           window.open(pdf, '_blank');
         } else {
-          console.error('Grado no válido');
+        //   console.error('Grado no válido');
         }
     };
 
@@ -659,7 +659,7 @@ const AdminTemas=({plataforma, setPlataformaVisible, area, idArea, idGrado, isOp
                 responsable: temasResponsable,
                 id_area: idArea
             });
-            console.log(response);
+            // console.log(response);
             handleSuccessMessage('Tema modificado con éxito');
             setIsLoading(false);
             fetchTemas();
@@ -719,7 +719,7 @@ const AdminTemas=({plataforma, setPlataformaVisible, area, idArea, idGrado, isOp
             }
 
             const response = await axios.delete(endpoint);
-            console.log(response);
+            // console.log(response);
             handleSuccessMessage('Tema Eliminado con éxito');
             setIsLoading(false);
             fetchTemas();
@@ -730,7 +730,7 @@ const AdminTemas=({plataforma, setPlataformaVisible, area, idArea, idGrado, isOp
                 handleErrorMessage(error.response.data.error);
             } else {
                 handleErrorMessage('Hubo un error al eliminar el tema.');
-                console.log(error.response.data.error);
+                // console.log(error.response.data.error);
             }
             setIsLoading(false);
         }

@@ -26,9 +26,9 @@ const AdminGrados = ({plataforma, setPlataformaVisible, setIdGrado}) => {
         try {
             const response = await axios.get(`${API_URL}/grados`);
             setUserGrados(response.data);
-            console.log("Grados", response.data);
+            // console.log("Grados", response.data);
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
     }
 

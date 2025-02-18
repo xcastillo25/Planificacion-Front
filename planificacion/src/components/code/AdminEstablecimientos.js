@@ -51,7 +51,7 @@ const AdminEstablecimientos = ({plataforma, setPlataformaVisible, UserId}) => {
             setCurrentPage(1);
             setEstablecimientosFiltrados(filteredDataEstablecimientos);
         } catch (error){
-            console.log(error);
+            // console.log(error);
         }
     }
 
@@ -155,7 +155,7 @@ const AdminEstablecimientos = ({plataforma, setPlataformaVisible, UserId}) => {
     const cambiarEstadoActivo = async (id) => {
         try{
             const response = await axios.put(`${API_URL}/establecimientosActivo/${id}`)
-            console.log(response);
+            // console.log(response);
             handleSuccessMessage('Estado cambiado exitosamente');
         } catch(error) {
             handleErrorMessage('Error al actualizar el estado del establecimiento', error);
@@ -254,7 +254,7 @@ const AdminEstablecimientos = ({plataforma, setPlataformaVisible, UserId}) => {
                 logotipo: foto
             });
 
-            console.log(response);
+            // console.log(response);
             handleSuccessMessage('Establecimiento modificado con éxito.')
             setIsLoading(false);
             resetForm();
@@ -289,7 +289,7 @@ const AdminEstablecimientos = ({plataforma, setPlataformaVisible, UserId}) => {
                 handleErrorMessage(error.response.data.error);
             } else {
                 handleErrorMessage('Hubo un error al eliminar el Establecimeinto.');
-                console.log(error.response.data.error);
+                // console.log(error.response.data.error);
             }
             setIsLoading(false);
         }
@@ -318,7 +318,7 @@ const AdminEstablecimientos = ({plataforma, setPlataformaVisible, UserId}) => {
             <h3>¿Está seguro que desea Eliminar este tema, se perderán todos los datos registrados?</h3>
             <button onClick={() => toast.dismiss()}>Cancelar</button>
             <button onClick={() => {
-                    console.log(idEstablecimiento);
+                    // console.log(idEstablecimiento);
                     eliminarEstablecimiento(idEstablecimiento);
                     toast.dismiss();
                 }}> 

@@ -219,7 +219,7 @@ const Planificaciones = ({
           findpoint = `${API_URL}/viewplanificacionesSextoTema/${seccion.id_grado}/${idArea}/${userId}/${seccion.id_ciclo}/${buscarPlanificacion}`;
           break;
         default:
-          console.warn('Grado no reconocido:', migrado);
+          // console.warn('Grado no reconocido:', migrado);
           return;
       }
 
@@ -234,7 +234,7 @@ const Planificaciones = ({
       // Reiniciar paginación
       setCurrentPagePlanificaciones(1);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -284,7 +284,7 @@ const Planificaciones = ({
       setMisTemasFiltrados(data);
       setCurrentPageMisTemas(1);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -399,7 +399,7 @@ const Planificaciones = ({
         id_docente: userId,
         id_ciclo: seccion.id_ciclo
       });
-      console.log(response);
+      // console.log(response);
       handleSuccessMessage('Tema registrado con éxito');
       setIsLoading(false);
       fetchMisTemas();
@@ -408,10 +408,10 @@ const Planificaciones = ({
     } catch (error) {
       if (error.response?.data?.error) {
         handleErrorMessage(error.response.data.error);
-        console.log(error);
+        // console.log(error);
       } else {
         handleErrorMessage(error.response?.data?.message);
-        console.log(error);
+        // console.log(error);
       }
       setIsLoading(false);
     }
@@ -448,12 +448,12 @@ const Planificaciones = ({
           endpoint = `${API_URL}/planificacionesSexto/${idPlanificacion}`;
           break;
         default:
-          console.warn('Grado no reconocido:', migrado);
+          // console.warn('Grado no reconocido:', migrado);
           return;
       }
 
       const response = await axios.delete(endpoint);
-      console.log(response);
+      // console.log(response);
       handleSuccessMessage('Tema Eliminado con éxito');
       setIsLoading(false);
       fetchPlanificaciones();
@@ -463,7 +463,7 @@ const Planificaciones = ({
         handleErrorMessage(error.response.data.error);
       } else {
         handleErrorMessage('Hubo un error al eliminar la sección.');
-        console.log(error.response?.data?.error);
+        // console.log(error.response?.data?.error);
       }
       setIsLoading(false);
     }

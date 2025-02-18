@@ -53,10 +53,10 @@ const Unidades = ({plataforma, setPlataformaVisible, seccion, setMisSecciones, s
         try {
             const response = await axios.get(`${API_URL}/unidades/${idGrado}/${idArea}/${userId}/${idCiclo}`);
             setUserData(response.data);
-            console.log("Unidades", response.data);
+            // console.log("Unidades", response.data);
             setUnidadesCreadas(response.data.unidades.length);
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
     };   
 
@@ -90,7 +90,7 @@ const Unidades = ({plataforma, setPlataformaVisible, seccion, setMisSecciones, s
                     endpoint = `${API_URL}/reportesSexto/${idUnidad}`;
                     break; 
                 default:
-                    console.warn("Grado no reconocido:", migrado);
+                    // console.warn("Grado no reconocido:", migrado);
                     return;
             }
 
@@ -99,7 +99,7 @@ const Unidades = ({plataforma, setPlataformaVisible, seccion, setMisSecciones, s
             setEncabezado(encabezado);
             setDatosTabla(datosTabla);
           } catch (error) {
-            console.error(error);
+            // console.error(error);
           }
     };
   
@@ -108,7 +108,7 @@ const Unidades = ({plataforma, setPlataformaVisible, seccion, setMisSecciones, s
           await fetchReportes(); // Esperar a que fetchReportes termine
           if (!encabezado || !datosTabla.length) {
             // Si encabezado o datosTabla no están definidos, no generamos el PDF
-            console.error("Error: No hay datos para generar el PDF");
+            // console.error("Error: No hay datos para generar el PDF");
             return;
           }
       
@@ -345,7 +345,7 @@ const Unidades = ({plataforma, setPlataformaVisible, seccion, setMisSecciones, s
           // Guardar o mostrar el PDF
           doc.save('reporte.pdf');
         } catch (error) {
-          console.error(error);
+        //   console.error(error);
         }
     };
             
@@ -433,7 +433,7 @@ const Unidades = ({plataforma, setPlataformaVisible, seccion, setMisSecciones, s
                 id_docente: userId,
                 id_ciclo: seccion.id_ciclo
             });
-            console.log('Datos', response)
+            // console.log('Datos', response)
             handleSuccessMessage('Unidad modificada con éxito');
             setIsLoading(false);
             fetchData();
@@ -452,7 +452,7 @@ const Unidades = ({plataforma, setPlataformaVisible, seccion, setMisSecciones, s
         setIsLoading(true);
         try{
             const response = await axios.delete(`${API_URL}/unidades/${idUnidad}`);
-            console.log('Datos', response);
+            // console.log('Datos', response);
             setIsLoading(false);
             fetchData();
             resetForm();
@@ -462,7 +462,7 @@ const Unidades = ({plataforma, setPlataformaVisible, seccion, setMisSecciones, s
                 handleErrorMessage(error.response.data.error);
             } else {
                 handleErrorMessage('Hubo un error al eliminar la unidad.');
-                console.log(error.response.data.error);
+                // console.log(error.response.data.error);
             }
             setIsLoading(false);
         }
@@ -526,7 +526,7 @@ const Unidades = ({plataforma, setPlataformaVisible, seccion, setMisSecciones, s
         return `${day}/${month}/${year}`;
     }
 
-    const notifyImprimir = (idU) => {
+    const notifyImprimir = () => {
         toast(
           <>
             <h3>¿Desea Imprimir la Planificación de esta unidad en formato PDF?</h3>
